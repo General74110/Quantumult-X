@@ -18,7 +18,7 @@ Use: Surge, QuanX, Loon
 
 您需要配置相关规则集:
 
-https://raw.githubusercontent.com/General74110/QuantumultX/master/Rule/Bilibili.list
+https://raw.githubusercontent.com/General74110/QuantumultX/master/Rule/Bilibili/Bilibili.list
 
 绑定相关select或static策略组，并且需要具有相关的区域代理服务器纳入您的子策略中，子策略可以是服务器也可以是其他区域策略组．
 最后，您可以通过BoxJs设置策略名和子策略名，或者手动填入脚本.

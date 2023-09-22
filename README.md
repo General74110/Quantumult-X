@@ -11,21 +11,17 @@ QuantumultX自用所有文件是一个收集所有QuantumultX自用文件的项�
 
 # 本项目的文件目录结构如下:
 
-QuantumultX-Self-Files/
+QuantumultX/
 
-├── Scripts/
+├── Config/
 
-│   ├── Script1.js
-
-│   ├── Script2.js
+│   ├── Meneg.conf
 
 │   └── ...
 
-└── Configs/
+├── Script/
 
-    ├── Config1.conf
-
-    ├── Config2.conf
+    ├── deinx.js
 
     └── ...
 

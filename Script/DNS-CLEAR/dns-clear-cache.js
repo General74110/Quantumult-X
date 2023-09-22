@@ -4,7 +4,7 @@ const message = {
 
 $configuration.sendMessage(message).then(resolve => {
     if (resolve.ret) {
-        console.log("dnsCache Cleared!");
+        console.log("DNS缓存清理完成✅!");
     } else {
         console.log(resolve.error);
     }

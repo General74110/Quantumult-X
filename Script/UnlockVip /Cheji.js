@@ -16,7 +16,7 @@ const dish = '/vipCoupon/popUpCouponInfo';
 const sb = '/activity/situation';
 const bd = '/findCarVipInfo/isVip';
 const gj = '/trace/userVip';
-const gg = 'traceUserVipOpenId/vipInfo';
+const gg = '/traceUserVipOpenId/vipInfo';
 
 if (url.indexOf(vip) != -1) {
    obj["data"] = "true";

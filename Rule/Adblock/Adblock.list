@@ -1,0 +1,12 @@
+#Twitter部分去广告
+HOST-SUFFIX,xp.apple.com, REJECT
+HOST-SUFFIX,mesu.apple.com, REJECT
+HOST-SUFFIX,ocsp.apple.com, REJECT
+HOST-SUFFIX,iadsdk.apple.com, REJECT
+HOST-SUFFIX,appldnld.apple.com, REJECT
+HOST-SUFFIX,ns.itunes.apple.com, REJECT
+HOST-SUFFIX,ca.iadsdk.apple.com, REJECT
+HOST-SUFFIX,unityads.unity3d.com, REJECT
+HOST-SUFFIX,internal.unity3d.com, REJECT
+HOST-SUFFIX,api-adservices.apple.com, REJECT
+HOST-SUFFIX,app-measurement.com, REJECT

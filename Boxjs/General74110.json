@@ -1,0 +1,56 @@
+{
+    "id": "General74110",
+    "name": "General 脚本订阅",
+    "author": "@General",
+    "icon": "https://raw.githubusercontent.com/General74110/Quantumult-X/master/icon/profile.png",
+    "repo": "https://github.com/General74110/Quantumult X",
+    "apps": [
+        {
+            "id": "yuheng.mi.step",
+            "name": "小米刷步",
+            "descs_html": [
+                "<em>一次BoxJS持久化的尝试</em>",
+                "<ol><li>每天刷一刷</li><li>健康第一</li><li>步数第二</li></ol>",
+                "<p style='color:#ff0000;margin-top:10px;'>步数不要超过50000</p>"
+            ],
+            "keys": [
+                "xiaomi_step_debug",
+                "xiaomi_step_username",
+                "xiaomi_step_password",
+                "xiaomi_step_step"
+            ],
+            "settings": [
+                {
+                    "id": "xiaomi_step_debug",
+                    "name": "是否输出日志",
+                    "val": false,
+                    "type": "boolean",
+                    "desc": ""
+                },
+                {
+                    "id": "xiaomi_step_username",
+                    "name": "小米刷步账号",
+                    "val": null,
+                    "type": "text",
+                    "rows": 1,
+                    "desc": "小米刷步账号，暂不支持多账号且只支持手机号"
+                },
+                {
+                    "id": "xiaomi_step_password",
+                    "name": "小米刷步密码",
+                    "val": null,
+                    "type": "text",
+                    "rows": 1,
+                    "desc": ""
+                },
+                {
+                    "id": "xiaomi_step_step",
+                    "name": "需要刷的步数",
+                    "val": null,
+                    "type": "text",
+                    "rows": 1,
+                    "desc": "置空默认10000-19999之间"
+                }
+            ],
+        
+}

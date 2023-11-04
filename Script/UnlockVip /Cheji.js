@@ -59,7 +59,7 @@ if (url.indexOf(us) != -1) {
    }
    
 if (url.indexOf(ban) != -1) {
-   obj ['data']["id"] = 4;
+   obj ['data'][0].id = 4;
    body = JSON.stringify(obj);
    }
 $done({body});

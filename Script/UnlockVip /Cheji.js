@@ -48,6 +48,7 @@ if (url.indexOf(gj) != -1) {
 if (url.indexOf(gg) != -1) {
    obj["data"]["vip"] = "true";
    obj["data"]["day"] = "738639";
+   obj["data"]["can_use_free_vip"] = "false";
    body = JSON.stringify(obj);
    }
    

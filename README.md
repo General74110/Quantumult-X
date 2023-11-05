@@ -17,6 +17,6 @@ QuantumultX自用所有文件是一个收集所有QuantumultX自用文件的项�
 如果您有任何可以添加的 QuantumultX 自用文件，欢迎提交 Pull Request 到本仓库，非常感谢您的贡献！
 ![Visitor Count](https://profile-counter.glitch.me/General74110/count.svg)  
 
-![General74110's GitHub stats](https://github-readme-stats.vercel.app/api?username=Heneral74110&show_icons=true&count_private=true&theme=vue)
+![General74110's GitHub stats](https://github-readme-stats.vercel.app/api?username=General74110&show_icons=true&count_private=true&theme=vue)
 
 ![General74110's github stats](https://github-readme-stats.vercel.app/api?username=General74110&show_icons=true&theme=vue-dark)

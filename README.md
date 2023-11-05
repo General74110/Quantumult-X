@@ -21,3 +21,6 @@ QuantumultX自用所有文件是一个收集所有QuantumultX自用文件的项�
 
 ## Star 历史
 <img src="https://api.star-history.com/svg?repos=General74110/Quantumult-X&type=Date" alt="Star History Chart" width="600" height="356" align="center">
+
+## Star 历史
+<img src="https://api.star-history.com/svg?repos=General74110/Quantumult-X&type=Date" alt="Star History Chart" width="600" height="356" align="center"&show_icons=true&count_private=true&theme=vue>

@@ -1,6 +1,6 @@
-## 🤩 QuantumultX 自用所有文件
+## 🤩 QuantumultX 自用所有文件(更新随缘)
 
-QuantumultX自用所有文件是一个收集所有QuantumultX自用文件的项目，包括QuantumultX脚本和配置文件等。
+QuantumultX自用所有文件是一个收集QuantumultX文件的自用项目，包括QuantumultX脚本和配置文件等。
 
 # 💻 功能
 

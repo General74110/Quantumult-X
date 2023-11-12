@@ -3,7 +3,7 @@
 
 
 
-^https:\/\/api\.wangmianhua\.cn\/api/(user/info|vod/watch|vod/buy) url script-response-body lushui.js
+^https:\/\/api\.wangmianhua\.cn\/api/(user/info|vod/watch|vod/buy) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/lushui.js
 
 MITM = api.wangmianhua.cn
 */

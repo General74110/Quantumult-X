@@ -27,7 +27,7 @@ if (url.indexOf(buy) != -1) {
     
 if (url.indexOf(vod) != -1) {
 	
-	obj["vodId"] = "70068"
+	obj["vod"] = "70068"
 	body = JSON.stringify(obj);
     }
     

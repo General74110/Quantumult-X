@@ -4,7 +4,9 @@
 ^https:\/\/tsp\.txzing\.com\/api(\/p/operation/common/allowFreeVip|\/p/operation/vipCoupon/popUpCouponInfo|\/p/operation/activity/situation|\/w/wx/module/findCar/findCarVipInfo/isVip|\/w/wx/module/trace/userVip|\/w/wx/module/traceMp/traceUserVipOpenId/vipInfo|\/w\/wx\/module\/smallProgram\/userInfo|\/wx\/module\/smallProgram\/userInfo\/banner) url script-response-body Cheji.js
 
 
-MITM = tsp.txzing.com
+MITM 
+
+hostname = tsp.txzing.com
 */
 
 var body = $response.body;

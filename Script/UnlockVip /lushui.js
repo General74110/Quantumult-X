@@ -30,6 +30,7 @@ if (url.indexOf(buy) != -1) {
     
 if (url.indexOf(vod) != -1) {
    obj["data"]["bought"] = "true"
+   obj["data"]["availableAmount"] = "9999"
 	body = JSON.stringify(obj);
     }
 

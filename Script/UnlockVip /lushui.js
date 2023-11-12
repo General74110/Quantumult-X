@@ -14,7 +14,6 @@ var obj = JSON.parse(body);
 
 const buy = '/api/vod/buy';
 const vod = '/api/vod/watch';
-const gj = '/api/vod/watch';
 const user = '/api/user/info';
 
 
@@ -28,13 +27,10 @@ if (url.indexOf(buy) != -1) {
 if (url.indexOf(vod) != -1) {
 	
 	obj["vod"] = "70068"
+   obj["bought"] = "true"
 	body = JSON.stringify(obj);
     }
-    
-if (url.indexOf(gj) != -1) {
-	obj["bought"] = "true"
-	body = JSON.stringify(obj);
-    }
+
 
  if (url.indexOf(user) != -1) {
 	obj["data"]["vipType"] = "isvip"

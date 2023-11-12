@@ -12,8 +12,7 @@ var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
 
-const buy = 'api/vod/buy';
-const code = 'api/vod/buy';
+const buy = '/api/vod/buy';
 const vod = '/api/vod/watch';
 const gj = '/api/vod/watch';
 const user = '/api/user/info';
@@ -21,14 +20,10 @@ const user = '/api/user/info';
 
 if (url.indexOf(buy) != -1) {
    obj["result"] = "true";
+   obj["code"] = "200";
    body = JSON.stringify(obj);
    }
    
-if (url.indexOf(code) != -1) {
-obj["code"] = "200";
-     body = JSON.stringify(obj);
-     }
-
     
 if (url.indexOf(vod) != -1) {
 	

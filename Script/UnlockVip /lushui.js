@@ -107,23 +107,23 @@ if (url.indexOf(data) != -1) {
     
 if (url.indexOf(vod) != -1) {
 	
-	obj ["vodId"] = "70068"
+	obj["vodId"] = "70068"
 	body = JSON.stringify(obj);
     }
     
 if (url.indexOf(gj) != -1) {
-	obj ["bought"] = "true"
+	obj["bought"] = "true"
 	body = JSON.stringify(obj);
     }
 
  if (url.indexOf(user) != -1) {
-	obj ["data"]["vipType"] = "isvip"
-	obj ["data"]["vipEndDate"] = "2099"
-	obj ["data"]["vipEndYear"] = "2099"
-	obj ["data"]["vipEndMonth"] = "9"
-	obj ["data"]["vipEndDay"] = "9"
-	obj ["data"]["vipEndHour"] = "9"
-	obj ["data"]["avaliableAmount"] = "9999"
+	obj["data"]["vipType"] = "isvip"
+	obj["data"]["vipEndDate"] = "2099"
+	obj["data"]["vipEndYear"] = "2099"
+	obj["data"]["vipEndMonth"] = "9"
+	obj["data"]["vipEndDay"] = "9"
+	obj["data"]["vipEndHour"] = "9"
+	obj["data"]["avaliableAmount"] = "9999"
 	
 	body = JSON.stringify(obj);
     }

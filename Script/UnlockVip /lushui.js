@@ -38,6 +38,8 @@ if (url.indexOf(vod) != -1) {
 	obj["data"]["vipEndDay"] = "9"
 	obj["data"]["vipEndHour"] = "9"
 	obj["data"]["avaliableAmount"] = "9999"
+   obj["data"]["recharged"] = "ture"
+   
 	
 	body = JSON.stringify(obj);
     }

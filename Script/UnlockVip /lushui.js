@@ -1,5 +1,10 @@
 /*
-General℡
+作者:General℡
+APP:露水视频
+解锁功能:解锁会员和付费视频
+下载地址:/
+观看地址:llmhuu.com
+
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
 ^https:\/\/api\.wangmianhua\.cn\/api(\/user/info|\/vod/watch|\/vod/buy) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/lushui.js
 hostname = api.wangmianhua.cn

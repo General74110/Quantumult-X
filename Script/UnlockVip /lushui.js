@@ -6,7 +6,7 @@ APP:露水视频
 观看地址:llmhuu.com
 
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
-^https:\/\/api\.wangmianhua\.cn\/api(\/user/info|\/vod/watch|\/vod/buy) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/lushui.js
+^https^https:\/\/api\.wangmianhua\.cn\/api(\/user/info|\/vod/watch|\/vod/buy|\/user/recharge) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/lushui.js
 hostname = api.wangmianhua.cn
 */
 
@@ -17,7 +17,7 @@ var obj = JSON.parse(body);
 const vod = '/api/vod/watch';
 const buy = '/api/vod/buy';
 const user = '/api/user/info';
-
+const userr = '/api/user/recharge';
 
 if (url.indexOf(buy) != -1) {
    obj["result"] = "true";
@@ -43,8 +43,19 @@ if (url.indexOf(vod) != -1) {
 	obj["data"]["avaliableAmount"] = "9999"
    obj["data"]["recharged"] = "ture"
 
-
 	body = JSON.stringify(obj);
     }
+   
+   if (url.indexOf(userr) != -1) {
+	obj["data"]["userInfo"]["vipType"] = "isvip"
+	obj["data"]["userInfo"]["vipEndDate"] = "2099"
+	obj["data"]["userInfo"]["vipEndYear"] = "2099"
+	obj["data"]["userInfo"]["vipEndMonth"] = "9"
+	obj["data"]["userInfo"]["vipEndDay"] = "9"
+	obj["data"]["userInfo"]["vipEndHour"] = "9"
+	obj["data"]["userInfo"]["avaliableAmount"] = "9999"
+   obj["data"]["userInfo"]["recharged"] = "ture"
+
+body = JSON.stringify(obj);
 
 $done({body}); 

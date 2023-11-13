@@ -46,16 +46,16 @@ if (url.indexOf(vod) != -1) {
 	body = JSON.stringify(obj);
     }
    
-   if (url.indexOf(userr) != -1) {
-	obj["data"]["userInfo"]["vipType"] = "isvip"
-	obj["data"]["userInfo"]["vipEndDate"] = "2099"
-	obj["data"]["userInfo"]["vipEndYear"] = "2099"
-	obj["data"]["userInfo"]["vipEndMonth"] = "9"
-	obj["data"]["userInfo"]["vipEndDay"] = "9"
-	obj["data"]["userInfo"]["vipEndHour"] = "9"
-	obj["data"]["userInfo"]["avaliableAmount"] = "9999"
-   obj["data"]["userInfo"]["recharged"] = "ture"
+if (url.indexOf(userr) != -1) {
+	obj data["userInfo"]['3'].vipType = "isvip"
+	obj data["userInfo"]['3'].vipEndDate = "2099"
+	obj data["userInfo"]['3'].vipEndYear = "2099"
+	obj data ["userInfo"]['3'].vipEndMonth = "9"
+	obj data["userInfo"]['3'].vipEndDay = "9"
+	obj data["userInfo"]['3'].vipEndHour = "9"
+	obj data["userInfo"]['3'].avaliableAmount = "9999"
+   obj data["userInfo"]['3'].recharged = "ture"
 
 body = JSON.stringify(obj);
-
+}
 $done({body}); 

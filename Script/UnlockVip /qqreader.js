@@ -1,7 +1,7 @@
 /*
 General℡
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
-^https:\/\/commontgw\.reader\.qq\.com\/book\/queryBookInfo\? url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https:\/\/commontgw\.reader\.qq\.com(\/book\/queryBookInfo|\/v7_6_6\/chapterOver) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 
 
@@ -19,7 +19,7 @@ var obj = JSON.parse(body);
 
 
 const viprd = 'book/queryBookInfo';
-
+const vipp = 'v7_6_6/chapterOver';
 
 if (url.indexOf(viprd) != -1) {
    obj["isVip"] = "true";
@@ -42,6 +42,10 @@ if (url.indexOf(viprd) != -1) {
    body = JSON.stringify(obj);
    }
 
-
-
+if (url.indexOf(vipp) != -1) {
+   obj["isVip"] = "1";
+   
+   body = JSON.stringify(obj);
+   }
+   
 $done({body}); 

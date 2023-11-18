@@ -14,10 +14,10 @@ hostname = commontgw.reader.qq.com
 */
 
 var body = $response.body;
-var headers = $response.headers;
+//var headers = $response.headers;
 var url = $request.url;
 var obj = JSON.parse(body);
-var obg = header.parse(headers);
+//var obg = header.parse(headers);
 
 const vipad = 'common/adV3';//vip去广告信息
 const vip = 'nativepage/getAcctInfo';
@@ -65,11 +65,11 @@ if (url.indexOf(vip2) != -1) {
    }
    
    
-if (url.indexOf(vip2) != -1) {
-   boj["is_book_vip"] = "true";
-   obj["isVip"] = "1";
+//if (url.indexOf(vip2) != -1) {
+   //boj["is_book_vip"] = "true";
+   //obj["isVip"] = "1";
    
-   headers = header.stringify(bjg);
-   }
+   //headers = header.stringify(bjg);
+   //}
 
 $done({body}); 

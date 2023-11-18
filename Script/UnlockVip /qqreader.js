@@ -3,7 +3,7 @@ General℡
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
 ^https?:\/\/commontgw\.reader\.qq\.com(\/common\/adV3|\/v7_6_6\/nativepage\/getAcctInfo|v7_6_6\/nativepage\/personal) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
-^https?:\/\/commontgw\.reader\.qq\.com\/v7_6_6\/nativepage\/personal url script-response-headers https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https?:\/\/commontgw\.reader\.qq\.com\/v7_6_6\/nativepage\/personal url script-response-header https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 hostname = commontgw.reader.qq.com
 

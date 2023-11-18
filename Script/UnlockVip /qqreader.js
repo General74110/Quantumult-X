@@ -17,7 +17,7 @@ var body = $response.body;
 var headers = $response.headers;
 var url = $request.url;
 var obj = JSON.parse(body);
-var obj = JSON.parse(headers);
+var obg = JSON.parse(headers);
 
 const vipad = 'common/adV3';//vip去广告信息
 const vip = 'nativepage/getAcctInfo';
@@ -69,7 +69,7 @@ if (url.indexOf(vip2) != -1) {
    boj["is_book_vip"] = "true";
    obj["isVip"] = "1";
    
-   headers = JSON.stringify(obj);
+   headers = JSON.stringify(bjg);
    }
 
 $done({body}); 

@@ -59,7 +59,7 @@ if (url.indexOf(vip1) != -1) {
    }
    
 if (url.indexOf(vip2) != -1) {
-   obj["isVip"] = "true";
+   obj["personal"]["userInfo"]['0'].isVip = "true";
    
    body = JSON.stringify(obj);
    }

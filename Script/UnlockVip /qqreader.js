@@ -1,9 +1,9 @@
 /*
 General℡
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
-^https?:\/\/commontgw\.reader\.qq\.com(\/common\/adV3|\/v7_6_6\/nativepage\/getAcctInfo|v7_6_6\/nativepage\/personal) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https?:\/\/commontgw\.reader\.qq\.com(\/common\/adV3|\/v7_6_6\/nativepage\/getAcctInfo|\/v7_6_6\/nativepage\/personal|book\/queryBookInfo) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
-^https?:\/\/commontgw\.reader\.qq\.com\/v7_6_6\/nativepage\/personal url script-response-header https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+
 
 hostname = commontgw.reader.qq.com
 
@@ -23,7 +23,7 @@ const vipad = 'common/adV3';//vip去广告信息
 const vip = 'nativepage/getAcctInfo';
 const vip1 = 'v7_6_6/userinfo';
 const vip2 = 'v7_6_6/nativepage/personal';//vip用户信息
-
+const bookvip = 'book/queryBookInfo';
 
 
 if (url.indexOf(vipad) != -1) {
@@ -59,17 +59,23 @@ if (url.indexOf(vip1) != -1) {
    }
    
 if (url.indexOf(vip2) != -1) {
-   obj["personal"]["userInfo"]['0'].isVip = "true";
+   obj["isVip"] = "true";
    
    body = JSON.stringify(obj);
    }
    
+if (url.indexOf(bookvip) != -1) {
+   obj["isVip"] = "true";
+   obj["gyBook"] = "1";
+   obj["payinfo"] = "true";
+   obj["vipBookLeadType"] = 1;
+   obj["chapterpayinfo"] = "true";
+   obj["vipStatus"] = "1";
+   obj["islimitfreebook"] = "true";
    
-//if (url.indexOf(vip2) != -1) {
-   //boj["is_book_vip"] = "true";
-   //obj["isVip"] = "1";
    
-   //headers = header.stringify(bjg);
-   //}
+   body = JSON.stringify(obj);
+   }
+
 
 $done({body}); 

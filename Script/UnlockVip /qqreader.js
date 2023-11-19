@@ -24,7 +24,7 @@ const Info = 'new/adInfo';
 if (url.indexOf(Info) != -1) {
    obj["isVip"] = "true";
    obj["buytype"] = "0";
-   
+   obj["paid"] = "1";
    
    body = JSON.stringify(obj);
    }

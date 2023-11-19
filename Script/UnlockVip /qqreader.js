@@ -21,7 +21,7 @@ var obj = JSON.parse(body);
 const Info = 'new/adInfo';
 
 
-if (url.indexOf(tt) != -1) {
+if (url.indexOf(Info) != -1) {
    obj["isVip"] = "true";
    obj["buytype"] = "0";
    

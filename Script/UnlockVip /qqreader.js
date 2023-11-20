@@ -7,7 +7,7 @@ General℡
 ^https?:\/\/newminerva-tgw\.reader\.qq\.com\/ChapBatAuthWithPD url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 
-^https?:\/\/iostgw\.reader\.qq\.com\/v7_6_6\/querycolumnnolimit url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https?:\/\/iostgw\.reader\.qq\.com\/(v7_6_6\/querycolumnnolimit|v7_6_6/chapterOver) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 hostname = commontgw.reader.qq.com, newminerva-tgw.reader.qq.com, iostgw.reader.qq.com
 
@@ -41,7 +41,7 @@ const ist = 'newUser/giftList';
 const tus = 'v7_6_6/uservipstatus';
 const hpd = 'ChapBatAuthWithPD';
 const vad = 'readonline/vipAdInfo';
-
+const ver = 'v7_6_6/chapterOver';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -72,7 +72,7 @@ if (url.indexOf(BookInfo) != -1) {
    }
    
 if (url.indexOf(userInfo) != -1) {
-   obj["guin"] = "1";
+   obj["guin"] = "738807045";
    obj["isVip"] = "1";
    obj["endTime"] = "4098830267";
   obj["vipType"] = "1";
@@ -91,7 +91,7 @@ if (url.indexOf(AdV) != -1) {
   
 if (url.indexOf(mit) != -1) {
    obj["isVip"] = "1";
-  obj["guin"] = "1";
+  obj["guin"] = "738807045";
   
   
   body = JSON.stringify(obj);
@@ -106,14 +106,14 @@ if (url.indexOf(ync) != -1) {
   
 if (url.indexOf(ice) != -1) {
    obj["isVip"] = "true";
-  obj["guin"] = "1";
+  obj["guin"] = "738807045";
   
   body = JSON.stringify(obj);
    }
   
 if (url.indexOf(unt) != -1) {
    obj["isVip"] = "true";
-  obj["guin"] = "1";
+  obj["guin"] = "738807045";
   
   body = JSON.stringify(obj);
    }
@@ -152,7 +152,7 @@ if (url.indexOf(tus) != -1) {
   
 if (url.indexOf(dot) != -1) {
    obj["isVip"] = "true";
-  obj["guin"] = "1";
+  obj["guin"] = "738807045";
   
   
   body = JSON.stringify(obj);
@@ -198,10 +198,18 @@ obj["paycheckmode"] = "1";
 if (url.indexOf(vad) != -1) {
   obj["vip"]["haveAct"] = "true";
    obj["vip"]["vipDesc"] = "已开通VIP";
-  obj["guin"] = "1";
+  obj["guin"] = "738807045";
   obj["isVip"] = "true";
   
   body = JSON.stringify(obj);
    }
+   
 
+if (url.indexOf(ver) != -1) {
+   obj["isVip"] = "1";
+  
+  
+  body = JSON.stringify(obj);
+   }
+   
 $done({body}); 

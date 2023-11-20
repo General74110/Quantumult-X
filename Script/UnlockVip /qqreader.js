@@ -1,7 +1,7 @@
 /*
 General℡
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
-^https?:\/\/commontgw\.reader\.qq\.com\/(v7\_6\_6\/readonline\/new\/adInfo|v7_6_6\/readonline\/vipAdInfo|book\/queryBookInfo|v7_6_6\/userinfo|common\/adV3|bookmark\/mutualSync|v7_6_6\/getnotice|v7_6_6\/fandomTask\/signCount|common\/remind\/popup|common\/monthpage|v7_6_6\/uservipstatus|v7_6_6\/lawAgreementRedDot|v7_6_6\/getWeekReadTime|v7_6_6\/sign\/welfare\/bookShelf|v7_6_6\/config\/platform\/vkeys|v7_6_6\/common\/newUser\/giftList) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https?:\/\/commontgw\.reader\.qq\.com\/(v7\_6\_6\/readonline\/new\/adInfo|v7_6_6\/readonline\/vipAdInfo|book\/queryBookInfo|v7_6_6\/userinfo|common\/adV3|bookmark\/mutualSync|v7_6_6\/getnotice|v7_6_6\/fandomTask\/signCount|common\/remind\/popup|common\/monthpage|common\/popMonthPage|v7_6_6\/uservipstatus|v7_6_6\/lawAgreementRedDot|v7_6_6\/getWeekReadTime|v7_6_6\/sign\/welfare\/bookShelf|v7_6_6\/config\/platform\/vkeys|v7_6_6\/common\/newUser\/giftList) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 
 ^https?:\/\/newminerva-tgw\.reader\.qq\.com\/ChapBatAuthWithPD url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
@@ -42,6 +42,7 @@ const tus = 'v7_6_6/uservipstatus';
 const hpd = 'ChapBatAuthWithPD';
 const vad = 'readonline/vipAdInfo';
 const ver = 'v7_6_6/chapterOver';
+const pop = 'common/popMonthPage';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -211,5 +212,14 @@ if (url.indexOf(ver) != -1) {
   
   body = JSON.stringify(obj);
    }
+   
+if (url.indexOf(pop) != -1) {
+   obj["guin"] = "738807045";
+  obj["isVip"] = "true";
+obj["isBan"] = "1";
+
+  
+  body = JSON.stringify(obj);
+   }   
    
 $done({body}); 

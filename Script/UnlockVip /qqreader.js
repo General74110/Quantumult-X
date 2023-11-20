@@ -41,7 +41,10 @@ if (url.indexOf(BookInfo) != -1) {
    obj["banTTS"] = "true";
    obj["payinfo"] = "true";
    obj["chapterpayinfo"] = "true";
-      
+  obj["allowMonthlyPay"] = "1";
+  obj["monthlyEndTime"] = "4098830267000";
+  obj["needOpenVip"] = "false";
+  
    
    body = JSON.stringify(obj);
    }

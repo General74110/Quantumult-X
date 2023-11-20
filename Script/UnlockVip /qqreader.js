@@ -1,7 +1,7 @@
 /*
 General℡
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
-^https?:\/\/commontgw\.reader\.qq\.com\/(v7\_6\_6\/readonline\/new\/adInfo|book\/queryBookInfo|v7_6_6\/userinfo|common\/adV3|bookmark\/mutualSync|v7_6_6\/getnotice|v7_6_6\/fandomTask\/signCount|common\/remind\/popup|common\/monthpage|v7_6_6\/uservipstatus|v7_6_6\/lawAgreementRedDot|v7_6_6\/getWeekReadTime|v7_6_6\/sign\/welfare\/bookShelf|v7_6_6\/config\/platform\/vkeys|v7_6_6\/common\/newUser\/giftList) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https?:\/\/commontgw\.reader\.qq\.com\/(v7\_6\_6\/readonline\/new\/adInfo|v7_6_6\/readonline\/vipAdInfo|book\/queryBookInfo|v7_6_6\/userinfo|common\/adV3|bookmark\/mutualSync|v7_6_6\/getnotice|v7_6_6\/fandomTask\/signCount|common\/remind\/popup|common\/monthpage|v7_6_6\/uservipstatus|v7_6_6\/lawAgreementRedDot|v7_6_6\/getWeekReadTime|v7_6_6\/sign\/welfare\/bookShelf|v7_6_6\/config\/platform\/vkeys|v7_6_6\/common\/newUser\/giftList) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 
 ^https?:\/\/newminerva-tgw\.reader\.qq\.com\/ChapBatAuthWithPD url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
@@ -40,6 +40,7 @@ const eys = 'platform/vkeys';
 const ist = 'newUser/giftList';
 const tus = 'v7_6_6/uservipstatus';
 const hpd = 'ChapBatAuthWithPD';
+const vad = 'readonline/vipAdInfo';
 
 
 if (url.indexOf(AdInfo) != -1) {
@@ -194,5 +195,13 @@ obj["paycheckmode"] = "1";
   body = JSON.stringify(obj);
    }
    
+if (url.indexOf(vad) != -1) {
+  obj["vip"]["haveAct"] = "true";
+   obj["vip"]["vipDesc"] = "已开通VIP";
+  obj["guin"] = "1";
+  obj["isVip"] = "true";
+  
+  body = JSON.stringify(obj);
+   }
 
 $done({body}); 

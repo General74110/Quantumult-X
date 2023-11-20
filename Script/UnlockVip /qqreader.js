@@ -19,22 +19,35 @@ var obj = JSON.parse(body);
 
 
 const AdInfo = 'new/adInfo';
+
 const AdV = 'common/adV3';
+
 const BookInfo = 'book/queryBookInfo';
+
 const userInfo = 'v7_6_6/userinfo';
+
 const mit = 'v7_6_6/querycolumnnolimit';
+
 const ync = 'bookmark/mutualSync';
+
 const ice = 'v7_6_6/getnotice';
+
 const unt = 'fandomTask/signCount';
+
 const pup = 'remind/popup";
 
 const tus = 'v7_6_6/uservipstatus';
 
 const dot = 'v7_6_6/lawAgreementRedDot';
+
 const ime = 'v7_6_6/getWeekReadTime';
+
 const age = 'common/monthpage';
+
 const elf = 'sign/welfare/bookShelf';
+
 const eys = 'platform/vkeys';
+
 const ist = 'newUser/giftList';
 
 

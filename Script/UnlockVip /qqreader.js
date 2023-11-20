@@ -30,7 +30,7 @@ const ync = 'bookmark/mutualSync';
 const ice = 'v7_6_6/getnotice';
 const unt = 'fandomTask/signCount';
 const pup = 'remind/popup";
-const tus = 'v7_6_6/uservipstatus';
+//const tus = 'v7_6_6/uservipstatus';
 
 const dot = 'v7_6_6/lawAgreementRedDot';
 const ime = 'v7_6_6/getWeekReadTime';
@@ -39,6 +39,7 @@ const elf = 'sign/welfare/bookShelf';
 
 const eys = 'platform/vkeys';
 const ist = 'newUser/giftList';
+const tus = 'v7_6_6/uservipstatus';
 
 
 if (url.indexOf(AdInfo) != -1) {

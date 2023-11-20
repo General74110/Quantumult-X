@@ -19,14 +19,18 @@ var obj = JSON.parse(body);
 
 
 const Info = 'new/adInfo';
-const yd = 'book/queryBookInfo';
+const BookInfo = 'book/queryBookInfo';
 
 if (url.indexOf(Info) != -1) {
    obj["isVip"] = "true";
    obj["buytype"] = "0";
    obj["paid"] = "1";
+  
    
-if (url.indexOf(yd) != -1) {
+    body = JSON.stringify(obj);
+   }
+   
+if (url.indexOf(BookInfo) != -1) {
    obj["isVip"] = "true";
    obj["vipStatus"] = "1";
    obj["gyBook"] = "1";   

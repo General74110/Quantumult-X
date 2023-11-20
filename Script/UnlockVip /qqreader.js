@@ -8,9 +8,6 @@ General℡
 hostname = commontgw.reader.qq.com
 
 
-
-
-
 */
 
 var body = $response.body;
@@ -29,9 +26,7 @@ const ync = 'bookmark/mutualSync';
 
 const ice = 'v7_6_6/getnotice';
 const unt = 'fandomTask/signCount';
-const pup = 'remind/popup";
-//const tus = 'v7_6_6/uservipstatus';
-
+const pup = 'remind/popup';
 const dot = 'v7_6_6/lawAgreementRedDot';
 const ime = 'v7_6_6/getWeekReadTime';
 const age = 'common/monthpage';

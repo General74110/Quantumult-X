@@ -23,7 +23,9 @@ delete obj.data;//删除指定数据
 
 console.log("拦截成功！！！");//打印拦截结果
 }
-
+else{
+    console.log("拦截失败！！！")
+}
 }
 //重写数据
 $done ({ body: JSON.stringify(obj) });

@@ -5,7 +5,7 @@ QQ阅读去除广告
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
 
 
-^https?:\/\/(us\.l\.qq\.com\/exapp|commontgw\.reader\.qq\.com\/account\/log\/ostar) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreaderAd.js
+^https?:\/\/(us\.l\.qq\.com\/exapp|commontgw\.reader\.qq\.com\/account\/log\/ostar) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/Adblock/qqreader.js
 
 
 

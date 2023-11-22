@@ -5,11 +5,11 @@ QQ阅读去除广告
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
 
 
-^https?:\/\/us\.l\.qq\.com\/exapp\? url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreaderAd.js
+^https?:\/\/(us\.l\.qq\.com\/exapp|commontgw\.reader\.qq\.com\/account\/log\/ostar) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreaderAd.js
 
 
 
-hostname = us.l.qq.com
+hostname = us.l.qq.com, commontgw.reader.qq.com
 
 */
 
@@ -19,7 +19,7 @@ let obj = JSON.parse($response.body) ;
 // 获取请求地址
 let requestUrl = $request.url;
 // 判断是否为匹配项
-if (/^https?:\/\/us\.l\.qq\.com\/exapp\?/.test(requestUrl))//去除 开屏广告
+if (/^https?:\/\/(us\.l\.qq\.com\/exapp|commontgw\.reader\.qq\.com\/account\/log\/ostar)/.test(requestUrl))//去除 开屏广告
 
 
 {
@@ -32,12 +32,9 @@ delete obj.data;//删除指定数据
 delete obj.last_ads;
 
 
-//console.log("开屏广告拦截成功！！！");//打印拦截结果
 
 
-}
-else{
-    console.log("拦截失败！！！");
+
 }
  
 }

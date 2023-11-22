@@ -23,6 +23,8 @@ let obj = JSON.parse($response.body) ;
 let requestUrl = $request.url;
 // 判断是否为匹配项
 if (/^https?:\/\/commontgw\.reader\.qq\.com\/common\/adV3/.test(requestUrl))//去除 我的-活动页面
+
+
 {
 //判断是否存在数据
 if (obj.hasOwnProperty("data")) {
@@ -44,6 +46,7 @@ if (/^https?:\/\/commontgw\.reader\.qq\.com\/common\/firstOpenApp\/ad?/.test(req
         }
         else{
             console.log("拦截失败!!!");
+            }
             }
 }
 //重写数据

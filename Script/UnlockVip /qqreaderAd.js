@@ -5,16 +5,9 @@ QQ阅读去除广告
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
 
 
-^https?:\/\/commontgw\.reader\.qq\.com\/common\/(adV3|firstOpenApp\/ad?) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreaderAd.js
+^https?:\/\/commontgw\.reader\.qq\.com\/account\/log\/ostar url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreaderAd.js
 
 
-
-if (/^https?:\/\/commontgw\.reader\.qq\.com\/common\/firstOpenApp\/ad?/.test(requestUrl))
-
-if (obj.hasOwnProperty("sk"))
-
-delete obj.sk.pool;
-console.log("拦截成功！！！");
 
 hostname = commontgw.reader.qq.com
 
@@ -26,7 +19,7 @@ let obj = JSON.parse($response.body) ;
 // 获取请求地址
 let requestUrl = $request.url;
 // 判断是否为匹配项
-if (/^https?:\/\/commontgw\.reader\.qq\.com\/common\/adV3/.test(requestUrl))//去除 我的-活动页面
+if (/^https?:\/\/commontgw\.reader\.qq\.com\/account\/log\/ostar/.test(requestUrl))//去除 我的-活动页面
 
 
 {
@@ -38,7 +31,7 @@ if (obj.hasOwnProperty("data"))
 delete obj.data;//删除指定数据
 
 
-console.log("活动页面拦截成功！！！");//打印拦截结果
+console.log("页面拦截成功！！！");//打印拦截结果
 
 
 }

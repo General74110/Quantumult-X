@@ -32,7 +32,7 @@ if (obj.hasOwnProperty("data")) {
 delete obj.data;//删除指定数据
 
 
-console.log("拦截成功！！！");//打印拦截结果
+console.log("活动页面拦截成功！！！");//打印拦截结果
 }
 else{
     console.log("拦截失败！！！");

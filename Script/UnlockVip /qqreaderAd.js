@@ -10,7 +10,7 @@ hostname = commontgw.reader.qq.com
 
 
 //获取相应数据
-let obj = JSON.parse($response body) ;
+let obj = JSON.parse($response.body) ;
 // 获取请求地址
 let requestUrl = $request.url;
 // 判断是否为匹配项

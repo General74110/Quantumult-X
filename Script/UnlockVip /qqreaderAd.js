@@ -1,7 +1,7 @@
 /*
 General℡
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
-^https?:\/\/commontgw\.reader\.qq\.com\/common\/adV3 url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https?:\/\/commontgw\.reader\.qq\.com\/common\/adV3 url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreaderAd.js
 
 
 hostname = commontgw.reader.qq.com

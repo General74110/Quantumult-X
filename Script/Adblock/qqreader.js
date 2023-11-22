@@ -32,7 +32,7 @@ delete obj.data;//删除指定数据
 delete obj.last_ads;
 
 
-console.log("开屏广告拦截成功！！！");//打印拦截结果
+//console.log("开屏广告拦截成功！！！");//打印拦截结果
 
 
 }

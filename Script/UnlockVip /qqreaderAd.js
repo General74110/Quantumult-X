@@ -19,7 +19,7 @@ let obj = JSON.parse($response.body) ;
 // 获取请求地址
 let requestUrl = $request.url;
 // 判断是否为匹配项
-if (/^https?:\/\/us\.l\.qq\.com\/exapp\?/.test(requestUrl))//去除 我的-活动页面
+if (/^https?:\/\/us\.l\.qq\.com\/exapp\?/.test(requestUrl))//去除 开屏广告
 
 
 {

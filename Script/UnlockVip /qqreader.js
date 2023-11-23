@@ -32,6 +32,7 @@ const acc = 'h5/account';
 const list = 'nativepage/rechargeList';
 const log = 'common/log';
 const play = 'audio/audioPlayInfo';
+const tts = 'v7_6_6/ttsSpeakerList';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -255,6 +256,15 @@ obj["book"]["tips"] = "";
 obj["book"]["bookDetail"] = "";
 
   
+  body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(tts) != -1) { 
+  obj["guin"] = "738807045";
+  obj["isVip"] = "1";
+  obj["inputBookSwitch"] = "1";
+
+
   body = JSON.stringify(obj);
    }
    

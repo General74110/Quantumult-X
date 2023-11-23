@@ -34,7 +34,7 @@ const log = 'common/log';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
-   obj["buytype"] = "0";
+   obj["buytype"] = "1";
    obj["paid"] = "1";
   
    

@@ -1,25 +1,3 @@
-/*
-General℡
-⚠️脚本仅作为学习，请勿拿去牟利⚠️
-
-^https?:\/\/commontgw\.reader\.qq\.com\/(v7\_6\_6\/readonline\/new\/adInfo|v7_6_6\/readonline\/vipAdInfo|book\/queryBookInfo|v7_6_6\/userinfo|common\/adV3|bookmark\/mutualSync|v7_6_6\/getnotice|v7_6_6\/fandomTask\/signCount|common\/remind\/popup|common\/monthpage|common\/popMonthPage|v7_6_6\/uservipstatus|v7_6_6\/lawAgreementRedDot|v7_6_6\/getWeekReadTime|v7_6_6\/sign\/welfare\/bookShelf|v7_6_6\/config\/platform\/vkeys|v7_6_6\/common\/newUser\/giftList|h5\/account) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
-
-
-^https?:\/\/newminerva-tgw\.reader\.qq\.com\/ChapBatAuthWithPD url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
-
-
-^https?:\/\/iostgw\.reader\.qq\.com\/(v7_6_6\/querycolumnnolimit|v7_6_6/chapterOver) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
-
-
-^https?:\/\/eventv3\.reader\.qq\.com\/activity\/new_welfare\/init url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
-
-hostname = commontgw.reader.qq.com, newminerva-tgw.reader.qq.com, iostgw.reader.qq.com, eventv3.reader.qq.com
-
-
-*/
-
-
-
 var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);

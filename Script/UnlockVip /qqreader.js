@@ -29,6 +29,7 @@ const ver = 'v7_6_6/chapterOver';
 const pop = 'common/popMonthPage';
 const nit = 'new_welfare/init';
 const acc = 'h5/account';
+const list = 'nativepage/rechargeList';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -225,6 +226,16 @@ if (url.indexOf(acc) != -1) {
    
    
    body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(list) != -1) {
+   obj["guin"] = "738807045";
+   obj["isVip"] = "true";
+   obj["balance"] = "4098830267";
+  obj["bookTicket"] = "468476";
+  obj["voucher"] = "100";
+  
+    body = JSON.stringify(obj);
    }
    
 $done({body}); 

@@ -234,8 +234,8 @@ if (url.indexOf(acc) != -1) {
    if (url.indexOf(list) != -1) {
    obj["guin"] = "738807045";
    obj["isVip"] = "true";
-   obj["balance"] = "4098830267";
-  obj["bookTicket"] = "468476";
+   obj["balance"] = "3565";
+  obj["bookTicket"] = "5777";
   obj["voucher"] = "100";
   
     body = JSON.stringify(obj);

@@ -227,7 +227,7 @@ obj["isBan"] = "1";
    }   
    
    if (url.indexOf(nit) != -1) {
-   obj["vip"] = "1";
+   obj["data"]["vip"] = "1";
   
   body = JSON.stringify(obj);
    }

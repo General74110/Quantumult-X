@@ -9,7 +9,10 @@ General℡
 
 ^https?:\/\/iostgw\.reader\.qq\.com\/(v7_6_6\/querycolumnnolimit|v7_6_6/chapterOver) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
-hostname = commontgw.reader.qq.com, newminerva-tgw.reader.qq.com, iostgw.reader.qq.com
+
+^https?:\/\/eventv3\.reader\.qq\.com\/activity\/new_welfare\/init url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+
+hostname = commontgw.reader.qq.com, newminerva-tgw.reader.qq.com, iostgw.reader.qq.com, eventv3.reader.qq.com
 
 
 */
@@ -43,6 +46,7 @@ const hpd = 'ChapBatAuthWithPD';
 const vad = 'readonline/vipAdInfo';
 const ver = 'v7_6_6/chapterOver';
 const pop = 'common/popMonthPage';
+const nit = 'new_welfare/init';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -221,5 +225,11 @@ obj["isBan"] = "1";
   
   body = JSON.stringify(obj);
    }   
+   
+   if (url.indexOf(nit) != -1) {
+   obj["vip"] = "1";
+  
+  body = JSON.stringify(obj);
+   }
    
 $done({body}); 

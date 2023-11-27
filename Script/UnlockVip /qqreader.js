@@ -41,7 +41,7 @@ const page = 'page/info';
 const Record = 'h5/queryAutoOpenRecord';
 const tts = 'v7_6_6/ttsSpeakerList';
 //const Acc = 'nativepage/getAcctInfo';
-//const nal = 'nativepage/personal';
+const nal = 'nativepage/personal';
 const Dress = 'dress/getVipDressList';
 
 

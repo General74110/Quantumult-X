@@ -134,7 +134,7 @@ if (url.indexOf(age) != -1) {
   obj["userMonthInfo"]["status"] = "1";
   obj["vipOpenCard"]["openCard"] = "";
   obj["isVip"] = "true";
-  obj["vipOpenCard"]["endTimeTxt"] = "2099-11-20到期，体验会员为平台赠送福利，管理续费";
+  obj["vipOpenCard"]["freeVipCard"]["endTimeTxt"] = "2099-11-20到期，体验会员为平台赠送福利，管理续费";
   obj["pf"] = "by066";
     body = JSON.stringify(obj);
    }

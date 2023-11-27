@@ -40,6 +40,7 @@ const theme = 'theme/list';
 const page = 'page/info';
 const Record = 'h5/queryAutoOpenRecord';
 const tts = 'v7_6_6/ttsSpeakerList';
+const Acc = 'nativepage/getAcctInfo';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -386,6 +387,21 @@ if (url.indexOf(page) != -1) {
    
    body = JSON.stringify(obj);
    }
+   
+   if (url.indexOf(Acc) != -1) {
+   obj["vipComment"] = "2099-11-20到期";
+   obj["vipLevel"] = "6";
+   obj["isMVip"] = "true";
+  obj["vipType"] = "2";
+  obj["vipEndTime"] = "2099-11-20";
+  obj["bookTicketEndtime"] = "2099-11-20";
+obj["vipButton"] = "1";
+obj["isVip"] = "true";
+  
+  
+    body = JSON.stringify(obj);
+   }
+   
    
    
 $done({body}); 

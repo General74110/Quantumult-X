@@ -39,6 +39,7 @@ const taskV2 = 'new_welfare/taskInitV2';
 const theme = 'theme/list';
 const page = 'page/info';
 const Record = 'h5/queryAutoOpenRecord';
+const tts = 'v7_6_6/ttsSpeakerList';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -314,7 +315,7 @@ if (url.indexOf(page) != -1) {
    } 
    
    if (url.indexOf(Record) != -1) {
-   obj["records"][0]["title"] = "QQ阅读会员";
+   obj ["records"][0]["title"] = "QQ阅读会员";
    obj ["records"][0]["channel"] = "1";
    obj ["records"][0]["subTitle"] = "2099-11-20到期";
    obj ["records"][0]["payDetail"][0]["code"] = "QQYFSC";
@@ -322,6 +323,66 @@ if (url.indexOf(page) != -1) {
    obj ["records"][0]["payDetail"][0]["desc"] = "已开启自动续费";
     obj ["records"][0]["payDetail"][0]["payWay"] = "1";
   
+   
+   body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(tts) != -1) {
+   obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
+   obj ["vipSpeaker"][0]["canBuy"] = "1";
+   obj ["vipSpeaker"][0]["engineType"] = "1";
+   obj ["vipSpeaker"][0]["iconType"] = "1";
+   obj ["vipSpeaker"][0]["payStatus"] = "1";
+   
+ 
+   obj ["vipSpeaker"][1]["redLimitedFree"] = "true";
+   obj ["vipSpeaker"][1]["canBuy"] = "1";
+   obj ["vipSpeaker"][1]["engineType"] = "1";
+   obj ["vipSpeaker"][1]["iconType"] = "1";
+   obj ["vipSpeaker"][1]["payStatus"] = "1";
+   
+   
+   obj ["vipSpeaker"][2]["redLimitedFree"] = "true";
+   obj ["vipSpeaker"][2]["canBuy"] = "1";
+   obj ["vipSpeaker"][2]["engineType"] = "1";
+   obj ["vipSpeaker"][2]["iconType"] = "1";
+   obj ["vipSpeaker"][2]["payStatus"] = "1";
+   
+   
+   obj ["vipSpeaker"][3]["redLimitedFree"] = "true";
+   obj ["vipSpeaker"][3]["canBuy"] = "1";
+   obj ["vipSpeaker"][3]["engineType"] = "1";
+   obj ["vipSpeaker"][3]["iconType"] = "1";
+   obj ["vipSpeaker"][3]["payStatus"] = "1";
+   
+   
+   obj ["vipSpeaker"][4]["redLimitedFree"] = "true";
+   obj ["vipSpeaker"][4]["canBuy"] = "1";
+   obj ["vipSpeaker"][4]["engineType"] = "1";
+   obj ["vipSpeaker"][4]["iconType"] = "1";
+   obj ["vipSpeaker"][4]["payStatus"] = "1";
+   
+   
+   obj ["vipSpeaker"][5]["redLimitedFree"] = "true";
+   obj ["vipSpeaker"][5]["canBuy"] = "1";
+   obj ["vipSpeaker"][5]["engineType"] = "1";
+   obj ["vipSpeaker"][5]["iconType"] = "1";
+   obj ["vipSpeaker"][5]["payStatus"] = "1";
+   
+   
+   
+   obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
+   obj ["localSpeaker"][0]["canBuy"] = "1";
+   obj ["localSpeaker"][0]["engineType"] = "1";
+   obj ["localSpeaker"][0]["iconType"] = "1";
+   obj ["localSpeaker"][0]["payStatus"] = "1";
+   
+   
+   obj ["vipSpeaker"][1]["redLimitedFree"] = "true";
+   obj ["localSpeaker"][1]["canBuy"] = "1";
+   obj ["localSpeaker"][1]["engineType"] = "1";
+   obj ["localSpeaker"][1]["iconType"] = "1";
+   obj ["localSpeaker"][1]["payStatus"] = "1";
    
    body = JSON.stringify(obj);
    }

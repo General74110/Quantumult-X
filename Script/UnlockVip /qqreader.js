@@ -124,7 +124,8 @@ if (url.indexOf(pup) != -1) {
   
 if (url.indexOf(age) != -1) {
    obj["userMonthInfo"]["endtimeYearVip"] = "2099";
-   obj["userMonthInfo"]["endtime"] = "4098830267";
+   obj["userMonthInfo"]["endtimeFree"] = "4098830267000";
+   obj["userMonthInfo"]["endtime"] = "4098830267000";
    obj["userMonthInfo"]["userType"] = "1";
   obj["userMonthInfo"]["cardNo"] = "YES.";
   obj["userMonthInfo"]["type"] = "1";
@@ -132,8 +133,8 @@ if (url.indexOf(age) != -1) {
   obj["userMonthInfo"]["status"] = "1";
   obj["vipOpenCard"]["openCard"] = "";
   obj["isVip"] = "true";
-  
-  
+  obj["vipOpenCard"]["endTimeTxt"] = "2099-11-20到期，体验会员为平台赠送福利，管理续费";
+  obj["pf"] = "by066";
     body = JSON.stringify(obj);
    }
   

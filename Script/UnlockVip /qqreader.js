@@ -41,6 +41,7 @@ const page = 'page/info';
 const Record = 'h5/queryAutoOpenRecord';
 const tts = 'v7_6_6/ttsSpeakerList';
 const Acc = 'nativepage/getAcctInfo';
+const nal = 'nativepage/personal';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -402,6 +403,16 @@ obj["isVip"] = "true";
     body = JSON.stringify(obj);
    }
    
-   
+   if (url.indexOf(nal) != -1) {
+  obj["isVip"] = "true";
+   obj["personal"]["monthUser"]["paidVipStatus"] = "1";
+  obj["personal"]["monthUser"]["title"] = "体验会员";
+  obj["personal"]["monthUser"]["smsVip"] = "1";
+obj["personal"]["monthUser"]["endTime"] = "2099-11-20到期";
+
+obj["personal"]["monthUser"]["mVipType"] = "2";
+  
+  body = JSON.stringify(obj);
+   }
    
 $done({body}); 

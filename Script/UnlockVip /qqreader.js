@@ -1,3 +1,22 @@
+/*
+作者: General℡
+App： QQ阅读
+功能:  QQ阅读体验会员功能
+版本： 8.0.52
+
+⚠️脚本仅作为学习，请勿拿去牟利⚠️
+⚠️脚本仅作为学习，请勿拿去牟利⚠️
+⚠️脚本仅作为学习，请勿拿去牟利⚠️
+
+
+
+
+
+
+
+
+*/
+
 var body = $response.body;
 var url = $request.url;
 var obj = JSON.parse(body);
@@ -320,6 +339,7 @@ if (url.indexOf(page) != -1) {
    
     body = JSON.stringify(obj);
    } 
+   
    
    if (url.indexOf(Record) != -1) {
    obj ["records"][0]["title"] = "QQ阅读会员";

@@ -314,13 +314,13 @@ if (url.indexOf(page) != -1) {
    } 
    
    if (url.indexOf(Record) != -1) {
-   obj records[0].title = "QQ阅读会员";
-   obj records[0].channel = "1";
-   obj records[0].subTitle = "2099-11-20到期";
-   obj records[0].payDetail[0].code = "QQYFSC";
-   obj records[0].payDetail[0].state = "1";
-   obj records[0].payDetail[0].desc = "已开启自动续费";
-    obj records[0].payDetail[0].payWay = "1";
+   obj["records"][0]["title"] = "QQ阅读会员";
+   obj ["records"][0]["channel"] = "1";
+   obj ["records"][0]["subTitle"] = "2099-11-20到期";
+   obj ["records"][0]["payDetail"][0]["code"] = "QQYFSC";
+   obj ["records"][0]["payDetail"][0]["state"] = "1";
+   obj ["records"][0]["payDetail"][0]["desc"] = "已开启自动续费";
+    obj ["records"][0]["payDetail"][0]["payWay"] = "1";
   
    
    body = JSON.stringify(obj);

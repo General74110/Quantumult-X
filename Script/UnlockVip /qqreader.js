@@ -38,6 +38,7 @@ const query = 'new_welfare/queryAwardList';
 const taskV2 = 'new_welfare/taskInitV2';
 const theme = 'theme/list';
 const page = 'page/info';
+const Record = 'h5/queryAutoOpenRecord';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -311,5 +312,28 @@ if (url.indexOf(page) != -1) {
    
     body = JSON.stringify(obj);
    } 
+   
+   if (url.indexOf(Record) != -1) {
+   obj["records"] = "[
+    {
+      "title" : "QQ阅读会员",
+      "channel" : 1,
+      "subTitle" : "2099-11-20到期",
+      "payDetail" : [
+        {
+          "code" : "QQYFSC",
+          "state" : 1,
+          "desc" : "已开启自动续费",
+          "payWay" : 1
+        }
+      ]
+    }
+  ]";
+   
+  
+   
+   body = JSON.stringify(obj);
+   }
+   
    
 $done({body}); 

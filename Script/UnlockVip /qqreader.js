@@ -63,7 +63,7 @@ if (url.indexOf(BookInfo) != -1) {
    obj["payinfo"] = "true";
    obj["chapterpayinfo"] = "true";
   obj["allowMonthlyPay"] = "1";
-  obj["monthlyEndTime"] = "4098830267";
+  obj["monthlyEndTime"] = "4098830267000";
   obj["needOpenVip"] = "false";
   
    
@@ -73,7 +73,7 @@ if (url.indexOf(BookInfo) != -1) {
 if (url.indexOf(userInfo) != -1) {
    obj["guin"] = "738807045";
    obj["isVip"] = "1";
-   obj["endTime"] = "4098830267";
+   obj["endTime"] = "4098830267000";
   obj["vipType"] = "1";
   obj["is_vip"] = "1";
   obj["vipStatus"] = "1";

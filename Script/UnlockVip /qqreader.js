@@ -42,7 +42,7 @@ const Record = 'h5/queryAutoOpenRecord';
 //const tts = 'v7_6_6/ttsSpeakerList';
 //const Acc = 'nativepage/getAcctInfo';
 //const nal = 'nativepage/personal';
-//const Dress = 'dress/getVipDressList';
+const Dress = 'dress/getVipDressList';
 
 
 
@@ -420,7 +420,7 @@ obj ["personal"]["monthUser"]["mVipType"] = "2";
   
   body = JSON.stringify(obj);
    }
-   
+   */
    if (url.indexOf(Dress) != -1) {
    obj ["vipEndTime"] = "2099-11-20";
    obj ["isVip"] = "true";
@@ -433,5 +433,5 @@ obj ["personal"]["monthUser"]["mVipType"] = "2";
   
     body = JSON.stringify(obj);
    }
-   */
+   
 $done({body}); 

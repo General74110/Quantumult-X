@@ -4,9 +4,7 @@ var obj = JSON.parse(body);
 
 
 const AdInfo = 'new/adInfo';
-
 const AdV = 'common/adV3';
-
 const BookInfo = 'book/queryBookInfo';
 const userInfo = 'v7_6_6/userinfo';
 const mit = 'v7_6_6/querycolumnnolimit';
@@ -28,11 +26,18 @@ const vad = 'readonline/vipAdInfo';
 const ver = 'v7_6_6/chapterOver';
 const pop = 'common/popMonthPage';
 const nit = 'new_welfare/init';
+
 const acc = 'h5/account';
 const list = 'nativepage/rechargeList';
 const log = 'common/log';
 const play = 'audio/audioPlayInfo';
 const tts = 'v7_6_6/ttsSpeakerList';
+const task = 'new_welfare/taskInitListenTime';
+const query = 'new_welfare/queryAwardList';
+
+const taskV2 = 'new_welfare/taskInitV2';
+const theme = 'theme/list';
+const page = 'page/info';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -267,5 +272,43 @@ obj["book"]["bookDetail"] = "";
 
   body = JSON.stringify(obj);
    }
+   
+   if (url.indexOf(task) != -1) {
+   obj["data"]["vip"] = "true";
+   
+   
+    body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(query) != -1) {
+   obj["data"]["vipChance"] = "1";
+   obj["data"]["vip"] = "true";
+   
+   
+    body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(taskV2) != -1) {
+   obj["data"]["vip"] = "true";
+   
+   
+    body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(theme) != -1) {
+   obj["isVip"] = "1";
+   
+   
+    body = JSON.stringify(obj);
+   }
+   
+if (url.indexOf(page) != -1) {
+   obj["info"]["expVip"] = "true";
+   obj["info"]["dayIncr"] = "88888888";
+   obj["vip"] = "1";
+   
+   
+    body = JSON.stringify(obj);
+   } 
    
 $done({body}); 

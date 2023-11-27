@@ -39,10 +39,10 @@ const taskV2 = 'new_welfare/taskInitV2';
 const theme = 'theme/list';
 const page = 'page/info';
 const Record = 'h5/queryAutoOpenRecord';
-const tts = 'v7_6_6/ttsSpeakerList';
-const Acc = 'nativepage/getAcctInfo';
-const nal = 'nativepage/personal';
-const Dress = 'dress/getVipDressList';
+//const tts = 'v7_6_6/ttsSpeakerList';
+//const Acc = 'nativepage/getAcctInfo';
+//const nal = 'nativepage/personal';
+//const Dress = 'dress/getVipDressList';
 
 
 
@@ -320,7 +320,7 @@ if (url.indexOf(page) != -1) {
    
     body = JSON.stringify(obj);
    } 
-   /*
+   
    if (url.indexOf(Record) != -1) {
    obj ["records"][0]["title"] = "QQ阅读会员";
    obj ["records"][0]["channel"] = "1";
@@ -333,7 +333,7 @@ if (url.indexOf(page) != -1) {
    
    body = JSON.stringify(obj);
    }
-   
+   /*
    if (url.indexOf(tts) != -1) {
    obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
    obj ["vipSpeaker"][0]["canBuy"] = "1";

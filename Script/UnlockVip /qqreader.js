@@ -44,6 +44,10 @@ const Acc = 'nativepage/getAcctInfo';
 const nal = 'nativepage/personal';
 const Dress = 'dress/getVipDressList';
 
+
+
+
+
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
    obj["buytype"] = "1";

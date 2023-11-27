@@ -329,7 +329,7 @@ if (url.indexOf(page) != -1) {
    
    body = JSON.stringify(obj);
    }
-   
+   /*
    if (url.indexOf(tts) != -1) {
    obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
    obj ["vipSpeaker"][0]["canBuy"] = "1";
@@ -391,43 +391,43 @@ if (url.indexOf(page) != -1) {
    }
    
    if (url.indexOf(Acc) != -1) {
-   obj["vipComment"] = "2099-11-20到期";
-   obj["vipLevel"] = "6";
-   obj["isMVip"] = "true";
-  obj["vipType"] = "2";
-  obj["vipEndTime"] = "2099-11-20";
-  obj["bookTicketEndtime"] = "2099-11-20";
-obj["vipButton"] = "1";
-obj["isVip"] = "true";
-obj["is_free"] = "true";
+   obj ["vipComment"] = "2099-11-20到期";
+   obj ["vipLevel"] = "6";
+   obj ["isMVip"] = "true";
+  obj ["vipType"] = "2";
+  obj ["vipEndTime"] = "2099-11-20";
+  obj ["bookTicketEndtime"] = "2099-11-20";
+obj ["vipButton"] = "1";
+obj ["isVip"] = "true";
+obj ["is_free"] = "true";
   
   
     body = JSON.stringify(obj);
    }
    
    if (url.indexOf(nal) != -1) {
-  obj["isVip"] = "true";
-   obj["personal"]["monthUser"]["paidVipStatus"] = "1";
-  obj["personal"]["monthUser"]["title"] = "体验会员";
-  obj["personal"]["monthUser"]["smsVip"] = "1";
-obj["personal"]["monthUser"]["endTime"] = "2099-11-20到期";
+  obj ["isVip"] = "true";
+   obj ["personal"]["monthUser"]["paidVipStatus"] = "1";
+  obj ["personal"]["monthUser"]["title"] = "体验会员";
+  obj ["personal"]["monthUser"]["smsVip"] = "1";
+obj ["personal"]["monthUser"]["endTime"] = "2099-11-20到期";
 
-obj["personal"]["monthUser"]["mVipType"] = "2";
+obj ["personal"]["monthUser"]["mVipType"] = "2";
   
   body = JSON.stringify(obj);
    }
    
    if (url.indexOf(Dress) != -1) {
-   obj["vipEndTime"] = "2099-11-20";
-   obj["isVip"] = "true";
-   obj["vipEndTimeStamp"] = "4098830267000";
-  obj["balance"] = "4";
-  obj["iosBalance"] = "4";
-  obj["isMonthVip"] = "true";
-  obj["vipType"] = "1";
+   obj ["vipEndTime"] = "2099-11-20";
+   obj ["isVip"] = "true";
+   obj ["vipEndTimeStamp"] = "4098830267000";
+  obj ["balance"] = "4";
+  obj ["iosBalance"] = "4";
+  obj ["isMonthVip"] = "true";
+  obj ["vipType"] = "1";
   
   
     body = JSON.stringify(obj);
    }
-   
+   */
 $done({body}); 

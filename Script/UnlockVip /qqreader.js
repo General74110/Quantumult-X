@@ -393,7 +393,7 @@ if (url.indexOf(page) != -1) {
    
    body = JSON.stringify(obj);
    }
-   
+   */
    if (url.indexOf(Acc) != -1) {
    obj ["vipComment"] = "2099-11-20到期";
    obj ["vipLevel"] = "6";
@@ -408,7 +408,7 @@ obj ["is_free"] = "true";
   
     body = JSON.stringify(obj);
    }
-   */
+   
    if (url.indexOf(nal) != -1) {
   obj ["isVip"] = "true";
    obj ["personal"]["monthUser"]["paidVipStatus"] = "1";

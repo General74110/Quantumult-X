@@ -333,7 +333,7 @@ if (url.indexOf(page) != -1) {
    
    body = JSON.stringify(obj);
    }
-   /*
+   
    if (url.indexOf(tts) != -1) {
    obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
    obj ["vipSpeaker"][0]["canBuy"] = "1";
@@ -376,7 +376,7 @@ if (url.indexOf(page) != -1) {
    obj ["vipSpeaker"][5]["iconType"] = "1";
    obj ["vipSpeaker"][5]["payStatus"] = "1";
    
-   
+   /*
    
    obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
    obj ["localSpeaker"][0]["canBuy"] = "1";

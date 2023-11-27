@@ -42,6 +42,7 @@ const Record = 'h5/queryAutoOpenRecord';
 const tts = 'v7_6_6/ttsSpeakerList';
 const Acc = 'nativepage/getAcctInfo';
 const nal = 'nativepage/personal';
+const Dress = 'dress/getVipDressList';
 
 if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
@@ -398,6 +399,7 @@ if (url.indexOf(page) != -1) {
   obj["bookTicketEndtime"] = "2099-11-20";
 obj["vipButton"] = "1";
 obj["isVip"] = "true";
+obj["is_free"] = "true";
   
   
     body = JSON.stringify(obj);
@@ -413,6 +415,19 @@ obj["personal"]["monthUser"]["endTime"] = "2099-11-20到期";
 obj["personal"]["monthUser"]["mVipType"] = "2";
   
   body = JSON.stringify(obj);
+   }
+   
+   if (url.indexOf(Dress) != -1) {
+   obj["vipEndTime"] = "2099-11-20";
+   obj["isVip"] = "true";
+   obj["vipEndTimeStamp"] = "4098830267000";
+  obj["balance"] = "4";
+  obj["iosBalance"] = "4";
+  obj["isMonthVip"] = "true";
+  obj["vipType"] = "1";
+  
+  
+    body = JSON.stringify(obj);
    }
    
 $done({body}); 

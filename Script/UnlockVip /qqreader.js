@@ -169,7 +169,29 @@ if (url.indexOf(age) != -1) {
   obj["vipOpenCard"]["openCard"] = "";
   obj["isVip"] = "true";
   obj["vipOpenCard"]["freeVipCard"]["endTimeTxt"] = "2099-11-20到期，付费会员，管理续费";
-  obj["pf"] = "by066";
+  
+  obj["blance"] = "3565";
+  obj["vipOpenCard"]["freeVipCard"]["title"] = "付费会员，已帮你节省307.94元";
+  obj["vipOpenCard"]["showType"] = "1";
+  obj["guin"] = "738807045";
+  obj["canH5"] = "true";
+  obj["paidMonthStatus"] = "1";
+  
+  obj ["viprights"][0]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][1]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][2]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][3]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][4]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][5]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][6]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][7]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][8]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][9]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][10]["controlParams"]["viptype"] = "1";
+  obj ["viprights"][11]["controlParams"]["viptype"] = "1";
+  
+  
+  
     body = JSON.stringify(obj);
    }
   

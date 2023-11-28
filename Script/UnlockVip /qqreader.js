@@ -422,7 +422,9 @@ obj ["balance"] = "3565";
   obj ["personal"]["monthUser"]["smsVip"] = "1";
 obj ["personal"]["monthUser"]["endTime"] = "2099-11-20到期";
 
-obj ["personal"]["monthUser"]["mVipType"] = "2";
+obj ["personal"]["monthUser"]["mVipType"] = "1";
+obj ["personal"]["accountInfo"]["balance"] = "3565";
+
   
   body = JSON.stringify(obj);
    }
@@ -431,7 +433,7 @@ obj ["personal"]["monthUser"]["mVipType"] = "2";
    obj ["vipEndTime"] = "2099-11-20";
    obj ["isVip"] = "true";
    obj ["vipEndTimeStamp"] = "4098830267000";
-  obj ["balance"] = "4";
+  obj ["balance"] = "3565";
   obj ["iosBalance"] = "4";
   obj ["isMonthVip"] = "true";
   obj ["vipType"] = "1";

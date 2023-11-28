@@ -409,6 +409,7 @@ if (url.indexOf(page) != -1) {
 obj ["vipButton"] = "1";
 obj ["isVip"] = "true";
 obj ["is_free"] = "true";
+obj ["balance"] = "3565";
   
   
     body = JSON.stringify(obj);

@@ -58,7 +58,7 @@ const taskV2 = 'new_welfare/taskInitV2';
 const theme = 'theme/list';
 const page = 'page/info';
 const Record = 'h5/queryAutoOpenRecord';
-//const tts = 'v7_6_6/ttsSpeakerList';
+const nce = 'v7_6_6/balance';
 const Acc = 'nativepage/getAcctInfo';
 const nal = 'nativepage/personal';
 const Dress = 'dress/getVipDressList';
@@ -71,6 +71,13 @@ if (url.indexOf(AdInfo) != -1) {
    obj["isVip"] = "true";
    obj["buytype"] = "1";
    obj["paid"] = "1";
+   obj["button1"]["secondType"] = "1";
+   obj["button1"]["ext"]["price"] = "0";
+   obj["button1"]["ext"]["discount"] = "0";
+   obj["button1"]["ext"]["favourablePrice"] = "0";
+   obj["button1"]["buttonType"] = "1";
+   obj["button1"]["buttonTxt"] = "会员享0折购买本章 0币";
+   obj["button1"]["scribeLineTxt"] = "0";
   
    
     body = JSON.stringify(obj);
@@ -269,7 +276,6 @@ if (url.indexOf(acc) != -1) {
    obj["guin"] = "738807045";
    obj["isVip"] = "true";
    obj["balance"] = "3565";
-  obj["bookTicket"] = "5777";
   obj["voucher"] = "100";
   
     body = JSON.stringify(obj);
@@ -353,67 +359,24 @@ if (url.indexOf(page) != -1) {
    
    body = JSON.stringify(obj);
    }
-   /*
-   if (url.indexOf(tts) != -1) {
-   obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
-   obj ["vipSpeaker"][0]["canBuy"] = "1";
-   obj ["vipSpeaker"][0]["engineType"] = "1";
-   obj ["vipSpeaker"][0]["iconType"] = "1";
-   obj ["vipSpeaker"][0]["payStatus"] = "1";
+   
+   if (url.indexOf(nce) != -1) {
+   obj ["vipEndTime"] = "2099-11-20";
+   obj ["balance"] = "3565";
+   obj ["vipType"] = "2";
+   obj ["monthUser"]["vipComment"] = "2099-11-20到期";
+   obj ["monthUser"]["gfrom"] = "101";
    
  
-   obj ["vipSpeaker"][1]["redLimitedFree"] = "true";
-   obj ["vipSpeaker"][1]["canBuy"] = "1";
-   obj ["vipSpeaker"][1]["engineType"] = "1";
-   obj ["vipSpeaker"][1]["iconType"] = "1";
-   obj ["vipSpeaker"][1]["payStatus"] = "1";
-   
-   
-   obj ["vipSpeaker"][2]["redLimitedFree"] = "true";
-   obj ["vipSpeaker"][2]["canBuy"] = "1";
-   obj ["vipSpeaker"][2]["engineType"] = "1";
-   obj ["vipSpeaker"][2]["iconType"] = "1";
-   obj ["vipSpeaker"][2]["payStatus"] = "1";
-   
-   
-   obj ["vipSpeaker"][3]["redLimitedFree"] = "true";
-   obj ["vipSpeaker"][3]["canBuy"] = "1";
-   obj ["vipSpeaker"][3]["engineType"] = "1";
-   obj ["vipSpeaker"][3]["iconType"] = "1";
-   obj ["vipSpeaker"][3]["payStatus"] = "1";
-   
-   
-   obj ["vipSpeaker"][4]["redLimitedFree"] = "true";
-   obj ["vipSpeaker"][4]["canBuy"] = "1";
-   obj ["vipSpeaker"][4]["engineType"] = "1";
-   obj ["vipSpeaker"][4]["iconType"] = "1";
-   obj ["vipSpeaker"][4]["payStatus"] = "1";
-   
-   
-   obj ["vipSpeaker"][5]["redLimitedFree"] = "true";
-   obj ["vipSpeaker"][5]["canBuy"] = "1";
-   obj ["vipSpeaker"][5]["engineType"] = "1";
-   obj ["vipSpeaker"][5]["iconType"] = "1";
-   obj ["vipSpeaker"][5]["payStatus"] = "1";
-   
-   
-   
-   obj ["vipSpeaker"][0]["redLimitedFree"] = "true";
-   obj ["localSpeaker"][0]["canBuy"] = "1";
-   obj ["localSpeaker"][0]["engineType"] = "1";
-   obj ["localSpeaker"][0]["iconType"] = "1";
-   obj ["localSpeaker"][0]["payStatus"] = "1";
-   
-   
-   obj ["vipSpeaker"][1]["redLimitedFree"] = "true";
-   obj ["localSpeaker"][1]["canBuy"] = "1";
-   obj ["localSpeaker"][1]["engineType"] = "1";
-   obj ["localSpeaker"][1]["iconType"] = "1";
-   obj ["localSpeaker"][1]["payStatus"] = "1";
+   obj ["monthUser"]["endtime"] = "4098830267000";
+   obj ["monthUser"]["vipStatus"] = "1";
+   obj ["monthUser"]["type"] = "2";
+   obj ["monthUser"]["vipButton"] = "1";
+   obj ["isMVip"] = "1";
    
    body = JSON.stringify(obj);
    }
-   */
+   
    if (url.indexOf(Acc) != -1) {
    obj ["vipComment"] = "2099-11-20到期";
    obj ["vipLevel"] = "6";

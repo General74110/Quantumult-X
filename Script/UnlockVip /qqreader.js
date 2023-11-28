@@ -75,8 +75,8 @@ if (url.indexOf(AdInfo) != -1) {
    obj["button1"]["ext"]["price"] = "0";
    obj["button1"]["ext"]["discount"] = "0";
    obj["button1"]["ext"]["favourablePrice"] = "0";
-   obj["button1"]["buttonType"] = "1";
-   obj["button1"]["buttonTxt"] = "会员享0折购买本章 0币";
+   obj["button1"]["buttonType"] = "3";
+   
    obj["button1"]["scribeLineTxt"] = "0";
   
    
@@ -442,4 +442,4 @@ obj ["personal"]["accountInfo"]["balance"] = "3565";
     body = JSON.stringify(obj);
    }
    
-$done({body}); 
+$done({body});

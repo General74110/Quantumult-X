@@ -177,18 +177,18 @@ if (url.indexOf(age) != -1) {
   obj["canH5"] = "true";
   obj["paidMonthStatus"] = "1";
   
-  obj ["viprights"][0]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][1]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][2]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][3]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][4]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][5]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][6]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][7]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][8]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][9]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][10]["controlParams"]["viptype"] = "1";
-  obj ["viprights"][11]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][0]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][1]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][2]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][3]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][4]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][5]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][6]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][7]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][8]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][9]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][10]["controlParams"]["viptype"] = "1";
+  obj ["vipRights"][11]["controlParams"]["viptype"] = "1";
   
   
   

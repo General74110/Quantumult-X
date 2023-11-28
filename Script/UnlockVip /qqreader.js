@@ -77,7 +77,6 @@ if (url.indexOf(AdInfo) != -1) {
    obj["button1"]["ext"]["favourablePrice"] = "0";
    obj["button1"]["buttonType"] = "3";
    
-   obj["button1"]["scribeLineTxt"] = "0";
   
    
     body = JSON.stringify(obj);

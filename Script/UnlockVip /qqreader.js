@@ -168,7 +168,7 @@ if (url.indexOf(age) != -1) {
   obj["userMonthInfo"]["status"] = "1";
   obj["vipOpenCard"]["openCard"] = "";
   obj["isVip"] = "true";
-  obj["vipOpenCard"]["freeVipCard"]["endTimeTxt"] = "2099-11-20到期，体验会员为平台赠送福利，管理续费";
+  obj["vipOpenCard"]["freeVipCard"]["endTimeTxt"] = "2099-11-20到期，付费会员，管理续费";
   obj["pf"] = "by066";
     body = JSON.stringify(obj);
    }
@@ -395,7 +395,7 @@ obj ["is_free"] = "true";
    if (url.indexOf(nal) != -1) {
   obj ["isVip"] = "true";
    obj ["personal"]["monthUser"]["paidVipStatus"] = "1";
-  obj ["personal"]["monthUser"]["title"] = "体验会员";
+  obj ["personal"]["monthUser"]["title"] = "付费会员";
   obj ["personal"]["monthUser"]["smsVip"] = "1";
 obj ["personal"]["monthUser"]["endTime"] = "2099-11-20到期";
 

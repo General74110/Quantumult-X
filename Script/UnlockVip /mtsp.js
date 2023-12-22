@@ -72,21 +72,22 @@ let obj = JSON.parse($response.body)
  
  decrypted.publisher.vipLevel = 3
  
- decrypted.hsah = true
- 
- 
-                
-                // 托底
+ decrypted.hsah = true 
+              
+              'api/series3/decrypt': () => {
+                decrypted.previewURL && decrypted.sourceURL && (decrypted.previewURL = '') 
+
+decrypted.isCan = true
+decrypted.watchCount = 999
+              
+              
+              // 托底
                 decrypted.freeTime = decrypted.playTime
             },
             // 解锁次数
             'vid/user/count': () => {
                 decrypted = { isCan: true, watchCount: 999, hash: true }
             },
-            
-            'api/series3/decrypt': () => {
-                decrypted = { isCan: true, watchCount: 999 }
-                },
                 
             // 个人中心
             'mine/info': () => {

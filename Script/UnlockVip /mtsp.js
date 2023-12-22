@@ -66,12 +66,16 @@ let obj = JSON.parse($response.body)
             'vid/info': () => {
                 decrypted.previewURL && decrypted.sourceURL && (decrypted.previewURL = '')
                 decrypted.vidStatus.hasPaid = true
+                decrypted.watch.isWatch = true
+                
                 decrypted.watch.isFreeWatch = true
                 
  decrypted.publisher.isVip = true
  
  decrypted.publisher.vipLevel = 3
- 
+
+ decrypted.publisher.fans = 999
+
  decrypted.hsah = true 
               
               

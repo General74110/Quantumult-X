@@ -3,7 +3,7 @@ GitHub 1.142.1
 除了Ai功能，其他功能都可用
 来源:@ios151
 [rewrite_local]
-https://api.github.com/graphql url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip/Github.js
+https://api.github.com/graphql url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/Github.js
 
 [mitm]
 hostname = api.github.com

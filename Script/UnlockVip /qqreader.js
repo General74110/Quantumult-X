@@ -1,5 +1,5 @@
 /*
-^https:\/\/(commontgw|iostgw)\.reader\.qq\.com\/(book\/queryBookInfo|v7_6_6\/paraComment\/myBookParaComment|v7_6_6\/balance)\? url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
+^https:\/\/(commontgw|iostgw)\.reader\.qq\.com\/(book\/queryBookInfo|v7_6_6\/paraComment\/myBookParaComment|v7_6_6\/balance|v7_6_6\/nativepage\/getAcctInfo)\? url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/UnlockVip%20/qqreader.js
 
 
 
@@ -15,8 +15,9 @@ var obj = JSON.parse(body);
 
 
 const BookInfo = 'book/queryBookInfo';
-const BookPara = 'paraComment/myBookParaComment'
-const Balance ='v7_6_6\/balance'
+const BookPara = 'paraComment/myBookParaComment';
+const Balance ='v7_6_6\/balance';
+const AcctInfo = 'nativepage/getAcctInfo';
 
 
 if (url.indexOf(BookInfo) != -1) {
@@ -68,5 +69,23 @@ if (url.indexOf(Balance) != -1) {
 	obj ["coupon"] = 1;
 	obj ["isMVip"] = 1;
 	
+body = JSON.stringify(obj);
+}
+
+
+
+
+if (url.indexOf(AcctInfo) != -1) {
+	obj ["vipComment"] = "2099-02-11到期";
+	obj ["vipLevel"] = 5;
+	obj ["isMVip"] = 'true';
+	obj ["vipType"] = 2;
+	obj ["channel"] = 1000;
+	obj ["vipEndTime"] = "2099-02-11";
+	obj ["norLevel"] = 6;
+	obj ["vipButton"] = 1;
+	obj ["isVip"] = "true";
+	obj ["vipStatus"] = 1;
+
 body = JSON.stringify(obj);
 }

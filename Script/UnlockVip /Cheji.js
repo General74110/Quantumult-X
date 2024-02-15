@@ -1,7 +1,7 @@
 /*
 [rewrite_local]
 
-^https:\/\/tsp-operation\.txzing\.com\/api(\/p/operation/common/allowFreeVip|\/p/operation/vipCoupon/popUpCouponInfo|\/p/operation/activity/situation|\/w/wx/module/findCar/findCarVipInfo/isVip|\/w/wx/module/trace/userVip|\/w/wx/module/traceMp/traceUserVipOpenId/vipInfo|\/w\/wx\/module\/smallProgram\/userInfo|\/wx\/module\/smallProgram\/userInfo\/banner) url script-response-body Cheji.js
+^https:\/\/tsp-operation\.txzing\.com\/api(\/p/operation/common/allowFreeVip|\/p/operation/vipCoupon/popUpCouponInfo|\/p/operation/activity/situation|\/w/wx/module/findCar/findCarVipInfo/isVip|\/w/wx/module/trace/userVip|\/w/wx/module/traceMp/traceUserVipOpenId/vipInfo|\/w\/wx\/module\/smallProgram\/userInfo|\/wx\/module\/smallProgram\/userInfo\/banner|\/w\/wx\/module\/smallProgram\/premiumVip\/premiumVipInfo\/vipInfo) url script-response-body Cheji.js
 
 
 
@@ -23,7 +23,7 @@ const gj = '/trace/userVip';
 const gg = '/traceUserVipOpenId/vipInfo';
 const us = '/smallProgram/userInfo';
 const ban = '/userInfo/banner';
-
+const vip = 'premiumVipInfo/vipInfo';
 
 
 if (url.indexOf(bd) != -1) {
@@ -54,7 +54,7 @@ if (url.indexOf(gj) != -1) {
 
 if (url.indexOf(gg) != -1) {
    obj["data"]["vip"] = "true";
-   obj["data"]["day"] = "738639";
+   obj["data"]["day"] = 738639;
    obj["data"]["can_use_free_vip"] = "false";
    body = JSON.stringify(obj);
    }
@@ -68,4 +68,12 @@ if (url.indexOf(ban) != -1) {
    obj ['data'][0].id = 4;
    body = JSON.stringify(obj);
    }
+   
+if (url.indexOf(vip) != -1) {
+   obj["data"]["vip"] = "true";
+   obj["data"]["can_use_free_vip"] = "false";
+   obj["data"]["day"] = 738639;
+   body = JSON.stringify(obj);
+   }
+         
 $done({body});

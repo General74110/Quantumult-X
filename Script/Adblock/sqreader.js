@@ -30,20 +30,18 @@ if (/^https:\/\/(ocean\.shuqireader\.com\/api|huichuan\.sm\.cn)(\/ad\/adserver\/
 {
 //判断是否存在数据
 if (obj.hasOwnProperty("data")) 
-
-if (obj.hasOwnProperty("slot_ad"))
+ eles if (obj.hasOwnProperty("slot_ad"))
 {
 
 delete obj.data;//删除指定数据
 delete obj.slot_ad;
 delete obj.last_ads;
 
-
-
+}
 
 
 }
- 
-}
+
+
 //重写数据
 $done ({ body: JSON.stringify(obj) });

@@ -38,7 +38,7 @@ delete obj.data;//删除指定数据
 delete obj.last_ads;
 
 }
-eles if (obj.hasOwnProperty("slot_ad"))
+else if (obj.hasOwnProperty("slot_ad"))
 
 {
 delete obj.slot_ad;

@@ -28,7 +28,7 @@ if (/^https:\/\/(ocean\.shuqireader\.com\/api|huichuan\.sm\.cn)(\/ad\/adserver\/
 
 
 {
-//判断是否存在数据
+/*//判断是否存在数据
 if (obj.hasOwnProperty("0['0'][0].slot_ad")) 
 
 {
@@ -37,7 +37,7 @@ delete obj.0['0'][0].slot_ad;//删除指定数据
 
 delete obj.last_ads;
 }
-else if (obj.hasOwnProperty("data"))
+else */if (obj.hasOwnProperty("data"))
 
 {
 delete obj.data;

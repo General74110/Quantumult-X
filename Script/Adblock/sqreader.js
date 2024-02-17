@@ -10,11 +10,11 @@ APP: 书旗小说
 ⚠️脚本仅作为学习，请勿拿去牟利⚠️
 
 
-^https:\/\/ocean\.shuqireader\.com\/api(\/ad\/adserver\/v1\/api\/getAdInfo|\/route\/month\/commodityInfo|\/route\/iosReadPage\/adV2) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/Adblock/sqreader.js
+^https:\/\/(ocean\.shuqireader\.com\/api|huichuan\.sm\.cn)(\/ad\/adserver\/v1\/api\/getAdInfo|\/route\/month\/commodityInfo|\/route\/iosReadPage\/adV2|\/route\/ios\/readPage|\/iosReadPage\/adTurnChapter|\/jbookmark\/api\/shuqiios\/act|\/nativead) url script-response-body https://raw.githubusercontent.com/General74110/Quantumult-X/master/Script/Adblock/sqreader.js
 
 
 
-hostname = ocean.shuqireader.com
+hostname = ocean.shuqireader.com, huichuan.sm.cn
 
 */
 
@@ -24,7 +24,7 @@ let obj = JSON.parse($response.body) ;
 // 获取请求地址
 let requestUrl = $request.url;
 // 判断是否为匹配项
-if (/https:\/\/ocean\.shuqireader\.com\/api(\/ad\/adserver\/v1\/api\/getAdInfo|\/route\/month\/commodityInfo|\/route\/iosReadPage\/adV2)/.test(requestUrl))//去除 开屏广告
+if (/^https:\/\/(ocean\.shuqireader\.com\/api|huichuan\.sm\.cn)(\/ad\/adserver\/v1\/api\/getAdInfo|\/route\/month\/commodityInfo|\/route\/iosReadPage\/adV2|\/route\/ios\/readPage|\/iosReadPage\/adTurnChapter|\/jbookmark\/api\/shuqiios\/act|\/nativead)/.test(requestUrl))//去除 开屏广告
 
 
 {

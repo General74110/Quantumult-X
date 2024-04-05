@@ -18,6 +18,3 @@ QuantumultX自用所有文件是一个收集QuantumultX文件的自用项目，�
 ![Visitor Count](https://profile-counter.glitch.me/General74110/count.svg)  
 
 ![General74110's GitHub stats](https://github-readme-stats.vercel.app/api?username=General74110&show_icons=true&count_private=true&theme=vue-dark)
-
-## Star 历史
-<img src="https://api.star-history.com/svg?repos=General74110/Quantumult-X&type=Date" alt="Star History Chart" width="600" height="356" align="center">

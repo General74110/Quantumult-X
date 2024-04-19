@@ -102,8 +102,17 @@ function Task(timeout = 0) {
                 data = JSON.parse(data)
 
                 if (data.code == 200) 
-                { 				    
-    console.log(`${data.msg}!💥获得免费时长: ${data.data.singleTime}分钟 ,到期时长: ${data.data.endTime} `)
+                { 	
+                
+                let endTime = `${data.data.endTime}`
+let date = new Date(endTime).toDateString()	 
+
+		    
+    console.log(`${data.msg}!💥获得免费时长: ${data.data.singleTime}分钟 ,到期时长: ${new Date(
+                new Date().getTime() +
+                new Date().getTimezoneOffset(endTime) * 60 * 1000 +
+                8 * 60 * 60 * 1000
+            ).toLocaleString()}  `)
 } 
 else {
     console.log(`${data.msg}`);

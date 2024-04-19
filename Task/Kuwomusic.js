@@ -52,7 +52,7 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
 
 
                     await Task()//你要执行的版块  
-                    await $.wait(30000)//你要延迟的时间  1000=1秒
+                    await $.wait(1000)//你要延迟的时间  1000=1秒
 
                 
             }
@@ -114,8 +114,11 @@ let date = new Date(endTime).toDateString()
                 8 * 60 * 60 * 1000
             ).toLocaleString()}  `)
 } 
-else {
-    console.log(`${data.msg}`);
+else if (data.code == -1)
+{
+    console.log(`${data.msg}！等明天吧！☀️`);
+} else {
+console.log(`${data.msg}八成Cookie掉了🌝`)
 }
 
 

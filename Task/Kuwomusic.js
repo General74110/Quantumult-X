@@ -1,4 +1,8 @@
+/*
+https://wapi.kuwo.cn/openapi/v1/user/freemium/h5/switches?
 
+
+*/
 const $ = new Env('酷我音乐');
 let status;
 
@@ -83,7 +87,7 @@ function Kuwomusicck() {
         if (Kuwomusicbody) $.setdata(Kuwomusicbody, `Kuwomusicbody${status}`)
         $.log(Kuwomusicbody)
 
-        $.msg($.name, "", `酷我音乐${status}获取headers成功`)
+        $.msg($.name, "", `酷我音乐${status}获取Cookies成功`)
 
     }
 }
@@ -108,7 +112,9 @@ function Task(timeout = 0) {
                 if (data.code == 200) 
                 {
     
-    console.log(`${data.msg},获得免费时长: ${data.data.singleTime}分钟 ,剩余时长: ${data.data.endTime}`)
+    console.log(`${data.msg},获得免费时长: ${data.data.singleTime}分钟 ,到期时长: let endTime = data.data.endTime
+let date = new Date(endTime)
+console.log(date) `)
 } 
 else {
     console.log(`${data.msg}`);

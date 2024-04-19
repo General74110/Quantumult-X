@@ -47,19 +47,16 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
                 Kuwomusicbody = KuwomusicbodyArr[i];
 
                 $.index = i + 1;
-                console.log(`\n\n开始【酷我音乐${$.index}】`)
+                console.log(`\n\n开始【酷我音乐】`)
 
 
-                //循环运行
-                for (let c = 0; c < 1; c++) {
-                    $.index = c + 1
 
                     await Task()//你要执行的版块  
-                    await $.wait(1000)//你要延迟的时间  1000=1秒
+                    await $.wait(30000)//你要延迟的时间  1000=1秒
 
-                }
+                
             }
-        }
+            }
     }
 })()
 
@@ -67,7 +64,7 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
     .finally(() => $.done())
 
 
-//获取ck
+//获取Cookie
 function Kuwomusicck() {
     if ($request.url.indexOf("freemium/h5/switches") > -1) {
         const Kuwomusicurl = $request.url
@@ -90,12 +87,10 @@ function Kuwomusicck() {
 
 
 
-//版块
+//看广告
 function Task(timeout = 0) {
     return new Promise((resolve) => {
 			
-
-
         let url = {
             url: `https://wapi.kuwo.cn/openapi/v1/user/freemium/h5/switches?`,
             headers: JSON.parse(Kuwomusichd),
@@ -107,11 +102,8 @@ function Task(timeout = 0) {
                 data = JSON.parse(data)
 
                 if (data.code == 200) 
-                {
-									let endTime = data.data.endTime
-let date = new Date(endTime)
-    
-    console.log(`${data.msg},获得免费时长: ${data.data.singleTime}分钟 ,到期时长: $.date `)
+                { 				    
+    console.log(`${data.msg}!💥获得免费时长: ${data.data.singleTime}分钟 ,到期时长: ${data.data.endTime} `)
 } 
 else {
     console.log(`${data.msg}`);

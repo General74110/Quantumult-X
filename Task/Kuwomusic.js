@@ -1,3 +1,33 @@
+/*
+APP：酷我音乐
+版本：10.6.6
+作者：General℡
+
+脚本功能：看广告，获取更多的免费听歌时间！
+
+操作：看一个广告后等提示再看浏览一个广告并点击获取到Cookie!获取完后关掉重写，避免不必要的MITM
+
+关于cron定时:由于每天有广告浏览次数限制，建议最快每三分钟运行一次
+
+注意⚠️：当前脚本只测试Loon，其他自测！
+可配合其他酷我音乐会员脚本去掉部分广告（没时间搞广告）
+
+
+使用声明：⚠️⚠️⚠️此脚本仅供学习与交流，
+        请勿转载与贩卖！⚠️⚠️⚠️
+
+[Script]
+http-request ^https:\/\/wapi\.kuwo\.cn\/openapi\/v1\/user\/freemium\/h5\/switches\? script-path=https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js, requires-body=true, timeout=10, enabled=true, tag=酷我音乐刷时长获取Cookie, img-url=https://raw.githubusercontent.com/LovedGM/Quantumult-X-TuBiao/main/zishi-cs/zs23.png
+
+
+[Task]
+cron "时间自定" script-path=https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js, timeout=10, tag=酷我音乐刷时长, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png
+
+
+[MITM]
+hostname = wapi.kuwo.cn
+
+*/
 const $ = new Env('酷我音乐');
 let status;
 

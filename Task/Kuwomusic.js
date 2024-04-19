@@ -1,4 +1,3 @@
-
 const $ = new Env('酷我音乐');
 let status;
 
@@ -94,8 +93,7 @@ function Kuwomusicck() {
 //版块
 function Task(timeout = 0) {
     return new Promise((resolve) => {
-			let endTime = data.data.endTime
-let date = new Date(endTime)
+			
 
 
         let url = {
@@ -110,6 +108,8 @@ let date = new Date(endTime)
 
                 if (data.code == 200) 
                 {
+									let endTime = data.data.endTime
+let date = new Date(endTime)
     
     console.log(`${data.msg},获得免费时长: ${data.data.singleTime}分钟 ,到期时长: $.date `)
 } 

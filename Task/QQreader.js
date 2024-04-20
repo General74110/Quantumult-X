@@ -107,7 +107,7 @@ function Sign(timeout = 0) {
 
                 } else if (data.code == -4)
                  {
-                 console.log(`$data.msg`)
+                 console.log(`${data.msg}`)
 
                 } else {
                 console.log(`Cookie已失效！`)

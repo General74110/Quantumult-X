@@ -52,7 +52,7 @@ let QQreaderhd = $.getdata('QQreaderhd')
                 //循环运行
                 
 
-                    await bankuai()//你要执行的版块  
+                    await Sign()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
 
 
@@ -79,7 +79,7 @@ function QQreaderck() {
         if (QQreaderhd) $.setdata(QQreaderhd, `QQreaderhd${status}`)
         $.log(QQreaderhd)
 
-        $.msg($.name, "", `QQ阅读${status}获取headers成功`)
+        $.msg($.name, "", `QQ阅读${status}获取Cookie成功`)
 
     }
 }
@@ -88,7 +88,7 @@ function QQreaderck() {
 
 
 //版块
-function bankuai(timeout = 0) {
+function Sign(timeout = 0) {
     return new Promise((resolve) => {
 
         let url = {
@@ -107,10 +107,10 @@ function bankuai(timeout = 0) {
 
                 } else if (data.code == -4)
                  {
-                 console.log(`$data.msg')
+                 console.log(`$data.msg`)
 
                 } else {
-                console.log(`Cookies已失效！`)
+                console.log(`Cookie已失效！`)
                 
                 }
                 

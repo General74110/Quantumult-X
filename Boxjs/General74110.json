@@ -6,7 +6,13 @@
   "repo": "https://github.com/General74110/Quantumult X",
   "apps": [
     {
-    内容待补充
-    }
+    "id": "Kuwomusic",
+      "name": "酷我音乐",
+      "keys": ["Kuwomusic.cookie"],
+      "author": "@General℡",
+      "icons": [
+        "https://raw. .com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png"
+      
+      ]
 ],
 }

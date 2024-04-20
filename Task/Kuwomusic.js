@@ -134,9 +134,9 @@ function Task(timeout = 0) {
                 if (data.code == 200) 
                 { 	
                 
-                let endTime = data.data.endTime
-let date = new Date(endTime * 1000).toDateString()	 
-let dateString = date.toLocaleString();
+               let endTime = data.data.endTime
+ let date = new Date(Number(endTime))
+ let dateString = date.toLocaleString();
 		    
     console.log(`${data.msg}!💥
     获得免费时长: ${data.data.singleTime}分钟 ,

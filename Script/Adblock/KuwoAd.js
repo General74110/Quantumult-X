@@ -29,11 +29,11 @@ if (/^http:\/\/rich\.kuwo\.cn\/AdService\/kaiping\/getcache\?/.test(requestUrl))
 
 {
 //判断是否存在数据
-if (obj.hasOwnProperty("['0'].list")) 
+if (obj.hasOwnProperty("list")) 
 
 {
 
-delete obj.['0'].list;//删除指定数据
+delete obj.list;//删除指定数据
 delete obj.last_ads;
 
 

@@ -7,7 +7,6 @@ APP：酷我音乐
 
 操作：看一个广告后等提示再看浏览一个广告并点击获取到Cookie!获取完后关掉重写，避免不必要的MITM
 
-关于cron定时:由于每天有广告浏览次数限制，建议最快每三分钟运行一次
 
 注意⚠️：当前脚本只测试Loon，其他自测！
 可配合其他酷我音乐会员脚本去掉部分广告（没时间搞广告）
@@ -21,7 +20,7 @@ http-request ^https:\/\/wapi\.kuwo\.cn\/openapi\/v1\/user\/freemium\/h5\/switche
 
 
 [Task]
-cron "时间自定" script-path=https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js, timeout=10, tag=酷我音乐刷时长, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png
+cron "0 7 * * ?" script-path=https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js, timeout=10, tag=酷我音乐刷时长, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png
 
 
 [MITM]
@@ -78,17 +77,18 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
 
                 $.index = i + 1;
                 console.log(`\n\n开始【酷我音乐】`)
-
-
+                for (let c = 0; c < 100; c++) {
+                    $.index = c + 1
 
                     await Task()//你要执行的版块  
-                    await $.wait(1000)//你要延迟的时间  1000=1秒
+                    await $.wait(3000)//你要延迟的时间  1000=1秒
 
-                
+                }
             }
-            }
+        }
     }
 })()
+
 
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -160,7 +160,6 @@ console.log(`${data.msg}八成Cookie掉了🌝`)
         }, timeout)
     })
 }
-
 
 
 

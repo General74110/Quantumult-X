@@ -44,10 +44,10 @@ delete obj.last_ads;
 
 
 }
-if (obj.hasOwnProperty("data.tmpPlayList"))
+if (obj.hasOwnProperty("data"))
 {
 
-delete obj.data.tmpPlayList;
+delete obj.data;
 delete obj.last_ads;
 
 

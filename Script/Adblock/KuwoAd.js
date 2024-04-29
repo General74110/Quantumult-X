@@ -1,4 +1,4 @@
-/*
+ /*
 作者: General℡
 APP: 酷我音乐
 应用: 
@@ -35,19 +35,24 @@ if (/^http:\/\/wapi\.kuwo\.cn\/openapi\/v1\/album\/adBar\/getTsAdConfig\?/.test(
 {
 //判断是否存在数据
 if (obj.hasOwnProperty("list")) 
-if (obj.hasOwnProperty("data.tmpPlayList"))
+
 
 {
-
 delete obj.list;//删除指定数据
-delete obj.data.tmpPlayList;
 delete obj.last_ads;
 
 
 
+}
+if (obj.hasOwnProperty("data.tmpPlayList"))
+{
+
+delete obj.data.tmpPlayList;
+delete obj.last_ads;
 
 
 }
+
  
 }
 //重写数据

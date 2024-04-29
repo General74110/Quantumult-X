@@ -23,7 +23,6 @@ hostname = rich.kuwo.cn, wapi.kuwo.cn
 
 
 //获取相应数据
-let//获取相应数据
 let obj = JSON.parse($response.body);
 // 获取请求地址
 let requestUrl = $request.url;

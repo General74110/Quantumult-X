@@ -102,10 +102,10 @@ function Sign(timeout = 0) {
                 data = JSON.parse(data)
 
                 if (data.code == 0) {
-                console.log(`签到成功！`)
+                console.log(`${data.msg}`)
 
 
-                } else if (data.code == -4)
+                } else if (data.code != 0)
                  {
                  console.log(`${data.msg}`)
 

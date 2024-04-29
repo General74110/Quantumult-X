@@ -22,6 +22,8 @@ hostname = rich.kuwo.cn, wapi.kuwo.cn
 */
 
 
+
+
 //获取相应数据
 let obj = JSON.parse($response.body);
 // 获取请求地址
@@ -41,5 +43,7 @@ delete obj.last_ads;//删掉last_ads
 delete obj.last_ads;//删掉last_ads
     }
 }
+
+
 //重写数据
 $done ({body: JSON.stringify(obj)});

@@ -36,7 +36,7 @@ delete obj.last_ads;//删掉last_ads
 
     }
     
-} else if (/:\/\/wapi\.kuwo\.cn\/openapi\/v1\/album\/adBar\/getTsAdConfig\?/.test(requestUrl)) {
+} else if (/^http:\/\/wapi\.kuwo\.cn\/openapi\/v1\/album\/adBar\/getTsAdConfig\?/.test(requestUrl)) {
     if (obj.hasOwnProperty("data")) {
         delete obj.data;//删掉data
 delete obj.last_ads;//删掉last_ads

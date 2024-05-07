@@ -23,7 +23,7 @@ http-request ^https:\/\/wapi\.kuwo\.cn\/openapi\/v1\/user\/freemium\/h5\/switche
 
 
 [Task]
-cron "0 7 * * ?" script-path=https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js, timeout=10, tag=酷我音乐刷时长, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png
+cron "* / 3 6-8 * * * script-path=https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js, timeout=10, tag=酷我音乐刷时长, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png
 
 
 [MITM]
@@ -80,13 +80,11 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
 
                 $.index = i + 1;
                 console.log(`\n\n开始【酷我音乐】`)
-                for (let c = 0; c < 48; c++) {
-                    $.index = c + 1
-
+                
                     await Task()//你要执行的版块  
-                    await $.wait(3000)//你要延迟的时间  1000=1秒
+                    await $.wait(1000)//你要延迟的时间  1000=1秒
 
-                }
+                
             }
         }
     }

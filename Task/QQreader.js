@@ -31,7 +31,7 @@ let QQreaderhd = $.getdata('QQreaderhd')
 
         }
 
-        console.log(
+        $.log(
             `\n\n=============================================== 脚本执行 - 北京时间(UTC+8)：${new Date(
                 new Date().getTime() +
                 new Date().getTimezoneOffset() * 60 * 1000 +
@@ -46,8 +46,8 @@ let QQreaderhd = $.getdata('QQreaderhd')
                 QQreaderhd = QQreaderhdArr[i];
 
 
-                $.index = i + 1;
-                console.log(`\n\n开始【QQ阅读】`)
+               // $.index = i + 1;
+                $.log(`\n\n开始【QQ阅读】签到`)
 
                 //循环运行
                 

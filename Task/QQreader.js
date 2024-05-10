@@ -102,17 +102,17 @@ function Sign(timeout = 0) {
                 data = JSON.parse(data)
 
                 if (data.code == 0) {
-                console.log(`${data.msg}! 签到成功啦！！！`)
+                $.log(`${data.msg}! 签到成功啦！！！`)
 
 
                 } else if (data.code == -4)
                  {
-                 console.log(`${data.msg}`)
+                 $.log(`${data.msg}`)
 
                 } else if (data.isLogin != true)
                 
                  {
-                console.log(`Cookie已失效！`)
+                $.log(`Cookie已失效！`)
                 
                 }
                 

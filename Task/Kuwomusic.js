@@ -63,7 +63,7 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
 
         }
 
-        console.log(
+        $.log(
             `\n\n=============================================== 脚本执行 - 北京时间(UTC+8)：${new Date(
                 new Date().getTime() +
                 new Date().getTimezoneOffset() * 60 * 1000 +
@@ -78,8 +78,8 @@ let Kuwomusicbody = $.getdata('Kuwomusicbody')
                 Kuwomusichd = KuwomusichdArr[i];
                 Kuwomusicbody = KuwomusicbodyArr[i];
 
-                $.index = i + 1;
-                console.log(`\n\n开始【酷我音乐】`)
+              //  $.index = i + 1;
+                $.log(`\n\n开始【酷我音乐】看广告视频 `)
                 
                     await Task()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
@@ -110,7 +110,7 @@ function Kuwomusicck() {
         if (Kuwomusicbody) $.setdata(Kuwomusicbody, `Kuwomusicbody${status}`)
         $.log(Kuwomusicbody)
 
-        $.msg($.name, "", `酷我音乐${status}获取Cookies成功`)
+        $.msg($.name, "", `酷我音乐广告视频${status}获取Cookies成功`)
 
     }
 }
@@ -139,15 +139,15 @@ function Task(timeout = 0) {
  let date = new Date(Number(endTime))
  let dateString = date.toLocaleString();
 		    
-    console.log(`${data.msg}!💥
+    $.log(`${data.msg}!💥
     获得免费时长: ${data.data.singleTime}分钟 ,
     到期时长: ${dateString}  `)
 } 
 else if (data.code == -1)
 {
-    console.log(`${data.msg}！等明天吧！☀️`);
+    $.log(`${data.msg}！等明天吧！☀️`);
 } else {
-console.log(`${data.msg}八成Cookie掉了🌝`)
+$.log(`${data.msg}八成Cookie掉了🌝`)
 }
 
 

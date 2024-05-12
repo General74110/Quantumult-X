@@ -31,7 +31,7 @@ let QQreaderhd = $.getdata('QQreaderhd')
 
         }
 
-        $.log(
+        console.log(
             `\n\n=============================================== 脚本执行 - 北京时间(UTC+8)：${new Date(
                 new Date().getTime() +
                 new Date().getTimezoneOffset() * 60 * 1000 +
@@ -46,14 +46,16 @@ let QQreaderhd = $.getdata('QQreaderhd')
                 QQreaderhd = QQreaderhdArr[i];
 
 
-               // $.index = i + 1;
-                $.log(`\n\n开始【QQ阅读】签到`)
+                //$.index = i + 1;
+                console.log(`\n\n开始【QQ阅读】签到任务`)
 
                 //循环运行
                 
 
-                    await Sign()//你要执行的版块  
+                    //await Sign()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
+                    await Sign()
+                    await $.wait(1000)
 
 
 
@@ -68,7 +70,8 @@ let QQreaderhd = $.getdata('QQreaderhd')
     .finally(() => $.done())
 
 
-//获取ck
+
+
 function QQreaderck() {
     if ($request.url.indexOf("activity/new_welfare/sign") > -1) {
         const QQreaderurl = $request.url
@@ -79,11 +82,10 @@ function QQreaderck() {
         if (QQreaderhd) $.setdata(QQreaderhd, `QQreaderhd${status}`)
         $.log(QQreaderhd)
 
-        $.msg($.name, "", `QQ阅读${status}获取Cookie成功`)
+        $.msg($.name, "", `QQ阅读签到${status}获取Cookie成功`)
 
     }
 }
-
 
 
 
@@ -101,18 +103,18 @@ function Sign(timeout = 0) {
 
                 data = JSON.parse(data)
 
-                if (data.code == 0) {
-                $.log(`${data.msg}! 签到成功啦！！！`)
+                if (data.isLogin != true) {
+               $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
 
 
+                } else if (data.code == 0) {
+                $.msg('QQ阅读签到','','签到成功啦！！！✅')
+
+                 
                 } else if (data.code == -4)
-                 {
-                 $.log(`${data.msg}`)
-
-                } else if (data.isLogin != true)
                 
                  {
-                $.log(`Cookie已失效！`)
+                $.msg('QQ阅读签到','','签到重复啦！！！🌝')
                 
                 }
                 
@@ -125,6 +127,10 @@ function Sign(timeout = 0) {
         }, timeout)
     })
 }
+
+
+
+
 
 
 

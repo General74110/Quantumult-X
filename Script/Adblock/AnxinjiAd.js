@@ -19,35 +19,40 @@ hostname = jjbapi.julanling.com, api-access.pangolin-sdk-toutiao1.com
 */
 
 
-//获取相应数据
-let resobj = JSON.parse($response.body);
-let reqobj = JSON.parse($request.body);
+// 打印请求和响应数据
+console.log("$request.body:", $request.body);
+console.log("$response.body:", $response.body);
+
+// 获取请求和相应数据
+let reqobj;
+let resobj;
+
+if ($request.body) {
+     reqobj = JSON.parse($request.body);
+}
+
+if ($response.body) {
+     resobj = JSON.parse($response.body);
+}
+
 // 获取请求地址
 let requestUrl = $request.url;
+
 // 判断是否为匹配项
-if (/^https?:\/\/(jjbapi\.julanling\.com\/advertConfig\/queryCutOverScreenConfig|api-access\.pangolin-sdk-toutiao1\.com\/api\/ad\/union\/sdk\/stats\/batch)\?/.test(requestUrl))//去除 开屏广告
+if (/^https?://(jjbapi.julanling.com/advertConfig/queryCutOverScreenConfig|api-access.pangolin-sdk-toutiao1.com/api/ad/union/sdk/stats/batch)?/.test(requestUrl)) {
 
+    // 在resobj存在的情况下判断是否存在数据
+    if (resobj && resobj.hasOwnProperty("results")) {
+        delete resobj.results;
+    }
 
-{
-//判断是否存在数据
-if (resobj.hasOwnProperty("results")) 
-
-{
-
-delete resobj.results;//删除指定数据
-
-//consoles.log("安心记加班:", "开屏广告删除成功","");//输出日志
-
+    // 在reqobj存在的情况下判断是否存在数据
+    if (reqobj && reqobj.hasOwnProperty("message")) {
+        delete reqobj.message;
+    }
 }
-if (reqobj.hasOwnProperty("message"))
-{
 
-delete reqobj.message;
-
-
-}
- 
-}
-//重写数据
-$done ({ body: JSON.stringify(reqobj),
-response: JSON.stringify(resobj) });
+// 重写数据
+let newReqBody = reqobj ? JSON.stringify(reqobj) : undefined;
+let newResBody = resobj ? JSON.stringify(resobj) : undefined;
+$done ({ body: newReqBody, response: newResBody });

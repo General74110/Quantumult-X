@@ -34,7 +34,7 @@ if (obj.hasOwnProperty("results"))
 {
 
 delete obj.results;//删除指定数据
-delete obj.last_ads;
+
 
 
 

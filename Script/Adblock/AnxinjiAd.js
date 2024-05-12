@@ -26,17 +26,17 @@ let requestUrl = $request.url;
 // 判断是否为匹配项
 if (/^https?:\/\/jjbapi\.julanling\.com\/advertConfig\/queryCutOverScreenConfig\?/.test(requestUrl)) {
     //判断是否存在数据
-    if (obj.hasOwnProperty("results") && obj.results.hasOwnProperty("onePicConfigResp")) {
-        delete obj.results.onePicConfigResp;//删掉list
-delete obj.last_ads;//删掉last_ads
+    if (obj.hasOwnProperty("results")) {
+        delete obj.results;//删掉results
+
 console.log(obj);
 
     }
     
 } else if (/^https?:\/\/jjbapi\.julanling\.com\/splash_screen\/jjb_splash_screen_v3\?/.test(requestUrl)) {
     if (obj.hasOwnProperty("results")) {
-        delete obj.results;//删掉data
-delete obj.last_ads;//删掉last_ads
+        delete obj.results;//删掉results
+
 console.log(obj)
     }
 }

@@ -114,7 +114,7 @@ function Sign(timeout = 0) {
                 } else if (data.code == -4)
                 
                  {
-                $.msg('QQ阅读签到','','签到重复啦！！！🌝')
+                $.msg('QQ阅读签到','','签到重复啦！！！🌝明天再来吧！！！')
                 
                 }
                 

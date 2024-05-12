@@ -139,15 +139,16 @@ function Task(timeout = 0) {
  let date = new Date(Number(endTime))
  let dateString = date.toLocaleString();
 		    
-    $.log(`${data.msg}!💥
-    获得免费时长: ${data.data.singleTime}分钟 ,
+    $.msg('酷我音乐看广告','',`${data.msg}!💥
+    获得免费时长: ${data.data.singleTime}分钟 
+    
     到期时长: ${dateString}  `)
 } 
 else if (data.code == -1)
 {
-    $.log(`${data.msg}！等明天吧！☀️`);
+    $.msg('酷我音乐看广告','',`${data.msg}！等明天吧！☀️`);
 } else {
-$.log(`${data.msg}八成Cookie掉了🌝`)
+$.msg('酷我音乐看广告','',`${data.msg}八成Cookie掉了🌝`)
 }
 
 
@@ -161,7 +162,6 @@ $.log(`${data.msg}八成Cookie掉了🌝`)
         }, timeout)
     })
 }
-
 
 
 // https://github.com/chavyleung/scripts/blob/master/Env.min.js

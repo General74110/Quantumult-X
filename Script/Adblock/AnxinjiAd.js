@@ -26,8 +26,8 @@ let requestUrl = $request.url;
 // 判断是否为匹配项
 if (/^https?:\/\/jjbapi\.julanling\.com\/advertConfig\/queryCutOverScreenConfig\?/.test(requestUrl)) {
     //判断是否存在数据
-    if (obj.hasOwnProperty("results")) {
-        delete obj.results;//删掉list
+    if (obj.hasOwnProperty("results.onePicConfigResp")) {
+        delete obj.results.onePicConfigResp;//删掉list
 delete obj.last_ads;//删掉last_ads
 console.log(obj);
 

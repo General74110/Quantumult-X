@@ -34,7 +34,7 @@ if (obj.hasOwnProperty("results"))
 
 delete obj.results;//删除指定数据
 
-console.log("安心记加班:", "","开屏广告删除成功");//输出日志
+console.log("安心记加班:","开屏广告删除成功");//输出日志
 
 
 

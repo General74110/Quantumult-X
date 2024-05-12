@@ -35,12 +35,15 @@ if (obj.hasOwnProperty("results"))
 
 delete obj.results;//删除指定数据
 
-console.log("After delete:", obj);//输出日志
+console.log("安心记加班:", 开屏广告删除成功);//输出日志
 
 
 
 
+} else{
+    console.log("安心记加班:","开屏广告删除失败",Error occurred: ${error}
 }
+ 
  
 }
 //重写数据

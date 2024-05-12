@@ -40,7 +40,7 @@ console.log("安心记加班:", "","开屏广告删除成功");//输出日志
 
 
 } else {
-    console.log("安心记加班:","开屏广告删除失败","Error occurred: ${error}"
+    console.log("安心记加班:","开屏广告删除失败","Error occurred: ${error}")
 }
 
  

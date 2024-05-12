@@ -35,7 +35,7 @@ if (obj.hasOwnProperty("results"))
 
 delete obj.results;//删除指定数据
 
-
+console.log("After delete:", obj);//输出日志
 
 
 

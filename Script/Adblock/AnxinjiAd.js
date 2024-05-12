@@ -29,6 +29,7 @@ if (/^https?:\/\/jjbapi\.julanling\.com\/advertConfig\/queryCutOverScreenConfig\
     if (obj.hasOwnProperty("results")) {
         delete obj.results;//删掉list
 delete obj.last_ads;//删掉last_ads
+console.log($response.body);
 
     }
     
@@ -36,6 +37,7 @@ delete obj.last_ads;//删掉last_ads
     if (obj.hasOwnProperty("results")) {
         delete obj.results;//删掉data
 delete obj.last_ads;//删掉last_ads
+console.log($response.body)
     }
 }
 

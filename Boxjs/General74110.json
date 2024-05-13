@@ -3,7 +3,7 @@
   "name": "General℡ 脚本订阅",
   "author": "@General74110",
   "icon": "https://raw.githubusercontent.com/General74110/Quantumult-X/master/icon/profile.png",
-  "repo": "https://raw.githubusercontent.com/General74110/Quantumult-X",
+  "repo": "https://github.com/General74110/Quantumult-X",
   "apps": [
     {
       "id": "Kuwomusic",

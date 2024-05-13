@@ -8,7 +8,7 @@
     {
       "id": "Kuwomusic",
       "name": "酷我音乐",
-      "keys": ["酷我音乐.cookie"],
+      "keys": ["Kuwomusicurl", "Kuwomusichd", "Kuwomusiccount"],
       "author": "@General℡",
       "repo": "https://raw.githubusercontent.com/General74110/Quantumult-X/tree/master/Task",
       "icons": ["https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/KKTV.png"],
@@ -17,7 +17,7 @@
     {
       "id": "QQreader",
       "name": "QQ阅读",
-      "keys": ["QQ阅读.cookie"],
+      "keys": ["QQreaderurl", "QQreaderhd", "QQreadercount"],
       "author": "@General℡",
       "repo": "https://raw.githubusercontent.com/General74110/Quantumult-X/tree/master/Task",
       "icons": ["https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/QQ.png"],

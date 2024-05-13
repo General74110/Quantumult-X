@@ -10,8 +10,10 @@
       "name": "酷我音乐",
       "keys": ["Kuwomusic.cookie"],
       "author": "@General℡",
+      "repo" : "https://raw.githubusercontent.com/General74110/Quantumult-X/master/Task/Kuwomusic.js",
       "icons": [
         "https://raw. .com/Semporia/Hand-Painted-icon/master/Social_Media/Bebo.png"
+      
       ]
 ],
 }

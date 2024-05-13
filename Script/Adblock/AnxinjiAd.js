@@ -26,8 +26,9 @@ let requestUrl = $request.url;
 // 判断是否为匹配项
 if (/^https?:\/\/jjbapi\.julanling\.com\/advertConfig\/queryCutOverScreenConfig\?/.test(requestUrl)) {
     //判断是否存在数据
-    if (obj.hasOwnProperty("results")) {
-        delete obj.results;//删掉results
+    
+     if (obj.hasOwnProperty("results"))  {
+        delete obj.results.onePicConfigResp;//删掉onePicConfigResp
 
 console.log(obj);
 
@@ -35,7 +36,20 @@ console.log(obj);
     
 } else if (/^https?:\/\/jjbapi\.julanling\.com\/splash_screen\/jjb_splash_screen_v3\?/.test(requestUrl)) {
     if (obj.hasOwnProperty("results")) {
-        delete obj.results;//删掉results
+    
+        delete obj.results['list'][0].statistics;//删掉statistics
+        
+        delete obj.results['list'][0].id;//删掉id
+        
+        delete obj.results['list'][0].target_type;//删掉target_type
+        
+        delete obj.results['list'][0].position_id;//删掉position_id
+        
+        delete obj.results['list'][0].request_timeout;//删掉request_timeout
+        
+        delete obj.results['list'][0].splash_group_id;//删掉splash_group_id
+    
+        
 
 console.log(obj)
     }

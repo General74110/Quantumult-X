@@ -3,10 +3,17 @@ let status;
 
 status = (status = ($.getval("QQreaderstatus") || "1")) > 1 ? `${status}` : "";
 
-const QQreaderurlArr = [], QQreaderhdArr = [], QQreadercount = ''
+const QQreaderqdurlArr = [], QQreaderqdhdArr = [], QQreaderqdcount = ''
 
-let QQreaderurl = $.getdata('QQreaderurl')
-let QQreaderhd = $.getdata('QQreaderhd')
+const QQreaderadurlArr = [], QQreaderadhdArr = [], QQreaderadcount = ''
+
+let QQreaderqdurl = $.getdata('QQreaderqdurl')
+let QQreaderqdhd = $.getdata('QQreaderqdhd')
+
+
+let QQreaderadurl = $.getdata('QQreaderadurl')
+let QQreaderadhd = $.getdata('QQreaderadhd')
+
 
 
 
@@ -14,22 +21,44 @@ let QQreaderhd = $.getdata('QQreaderhd')
 !(async () => {
     if (typeof $request !== "undefined") {
 
-        QQreaderck()
+        QQreaderqdck()
+        
 
     } else {
-        QQreaderurlArr.push($.getdata('QQreaderurl'))
-        QQreaderhdArr.push($.getdata('QQreaderhd'))
+        QQreaderqdurlArr.push($.getdata('QQreaderqdurl'))
+        QQreaderqdhdArr.push($.getdata('QQreaderqdhd'))
 
 
-        let QQreadercount = ($.getval('QQreadercount') || '1');
+        let QQreaderqdcount = ($.getval('QQreaderqdcount') || '1');
 
-        for (let i = 2; i <= QQreadercount; i++) {
+        for (let i = 2; i <= QQreaderqdcount; i++) {
 
-            QQreaderurlArr.push($.getdata(`QQreaderurl${i}`))
-            QQreaderhdArr.push($.getdata(`QQreaderhd${i}`))
+            QQreaderqdurlArr.push($.getdata(`QQreaderqdurl${i}`))
+            QQreaderqdhdArr.push($.getdata(`QQreaderqdhd${i}`))
+            }
+            
+            
+            if (typeof $request !== "undefined") {
 
+        QQreaderadck()
+        
+
+    } else {
+        QQreaderadurlArr.push($.getdata('QQreaderadurl'))
+        QQreaderadhdArr.push($.getdata('QQreaderadhd'))
+
+
+        let QQreaderadcount = ($.getval('QQreaderadcount') || '1');
+
+        for (let i = 2; i <= QQreaderadcount; i++) {
+
+            QQreaderadurlArr.push($.getdata(`QQreaderadurl${i}`))
+            QQreaderadhdArr.push($.getdata(`QQreaderadhd${i}`))
 
         }
+    }
+
+
 
         console.log(
             `\n\n=============================================== 脚本执行 - 北京时间(UTC+8)：${new Date(
@@ -38,30 +67,44 @@ let QQreaderhd = $.getdata('QQreaderhd')
                 8 * 60 * 60 * 1000
             ).toLocaleString()} ===============================================\n`);
 
-        for (let i = 0; i < QQreaderhdArr.length; i++) {
+        for (let i = 0; i < (QQreaderqdurlArr.length|QQreaderadurlArr.length); i++) {
 
-            if (QQreaderhdArr[i]) {
+            if (QQreaderqdhdArr[i])  {
 
-                QQreaderurl = QQreaderurlArr[i];
-                QQreaderhd = QQreaderhdArr[i];
+                QQreaderqdurl = QQreaderqdurlArr[i];
+                QQreaderqdhd = QQreaderqdhdArr[i];
 
 
-                //$.index = i + 1;
+                $.index = i + 1;
                 console.log(`\n\n开始【QQ阅读】签到任务`)
 
                 //循环运行
                 
 
-                    //await Sign()//你要执行的版块  
+                    await Sign()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
-                    await Sign()
+                    
+                    
+                    $.index = i + 1;
+                console.log(`\n\n开始【QQ阅读】看小视频任务`)
+                    await Signad()
                     await $.wait(1000)
-
-
-
-
+            
+             
+                }
+                if (QQreaderadhdArr[i])  {
+                QQreaderadurl = QQreaderadurlArr[i];
+                QQreaderadhd = QQreaderadhdArr[i];
                 
-            }
+                    
+                    
+                    $.index = i + 1;
+                console.log(`\n\n开始【QQ阅读】看小视频任务`)
+                    await Signad()
+                    await $.wait(1000)
+                
+                
+            }  
         }
     }
 })()
@@ -72,36 +115,49 @@ let QQreaderhd = $.getdata('QQreaderhd')
 
 
 
-function QQreaderck() {
+function QQreaderqdck() {
     if ($request.url.indexOf("activity/new_welfare/sign") > -1) {
-        const QQreaderurl = $request.url
-        if (QQreaderurl) $.setdata(QQreaderurl, `QQreaderurl${status}`)
-        $.log(QQreaderurl)
+        const QQreaderqdurl = $request.url
+        if (QQreaderqdurl) $.setdata(QQreaderqdurl, `QQreaderqdurl${status}`)
+        $.log(QQreaderqdurl)
 
-        const QQreaderhd = JSON.stringify($request.headers)
-        if (QQreaderhd) $.setdata(QQreaderhd, `QQreaderhd${status}`)
-        $.log(QQreaderhd)
+        const QQreaderqdhd = JSON.stringify($request.headers)
+        if (QQreaderqdhd) $.setdata(QQreaderqdhd, `QQreaderqdhd${status}`)
+        $.log(QQreaderqdhd)
 
         $.msg($.name, "", `QQ阅读签到${status}获取Cookie成功`)
+
+    
+    }
+
+
+if ($request.url.indexOf("activity/new_welfare/receiveVideo") > -1) {
+        const QQreaderadurl = $request.url
+        if (QQreaderadurl) $.setdata(QQreaderadurl, `QQreaderadurl${status}`)
+        $.log(QQreaderadurl)
+
+        const QQreaderadhd = JSON.stringify($request.headers)
+        if (QQreaderadhd) $.setdata(QQreaderadhd, `QQreaderadhd${status}`)
+        $.log(QQreaderadhd)
+
+        $.msg($.name, "", `QQ阅读活动中心看视频${status}获取Cookie成功`)
 
     }
 }
 
 
-
-//版块
+//签到
 function Sign(timeout = 0) {
     return new Promise((resolve) => {
 
         let url = {
             url: `https://eventv3.reader.qq.com/activity/new_welfare/sign`,
-            headers: JSON.parse(QQreaderhd),
+            headers: JSON.parse(QQreaderqdhd),
         }
 
         $.get(url, async (err, resp, data) => {
             try {
-
-                data = JSON.parse(data)
+            data = JSON.parse(data)
 
                 if (data.isLogin != true) {
                $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
@@ -131,6 +187,45 @@ function Sign(timeout = 0) {
 
 
 
+
+//任务中心/更多/看小视频领赠币
+function Signad(timeout = 0) {
+    return new Promise((resolve) => {
+
+        let url = {
+            url: `https://eventv3.reader.qq.com/activity/new_welfare/receiveVideo?`,
+            headers: JSON.parse(QQreaderadhd),
+        }
+
+        $.get(url, async (err, resp, data) => {
+            try {
+
+                data = JSON.parse(data)
+
+                if (data.isLogin != true) {
+               $.msg('QQ阅读任务中心小视频','','Cookie已失效!⚠️') 
+
+
+                } else if (data.code == 0) {
+                $.msg('QQ阅读任务中心小视频','小视频观看成功啦💥',`获得${data.data}赠币`)
+
+                 
+                } else if (data.code == -4)
+                
+                 {
+                $.msg('QQ阅读任务中心','','小视频看完啦！！！🌝明天再来吧！！！')
+                
+                }
+                
+            } catch (e) {
+
+            } finally {
+
+                resolve()
+            }
+        }, timeout)
+    })
+}
 
 
 

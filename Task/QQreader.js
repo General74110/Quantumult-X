@@ -78,18 +78,22 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                 $.index = i + 1;
                 console.log(`\n\n开始【QQ阅读】签到任务`)
 
-                //循环运行
                 
 
                     await Sign()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
                     
-                    
                     $.index = i + 1;
                 console.log(`\n\n开始【QQ阅读】看小视频任务`)
-                    await Signad()
+                    //循环运行
+                for (let c = 0; c < 3; c++) {
+                    $.index = c + 1
+
+
+                    
+            await Signad()
                     await $.wait(1000)
-            
+                    }
              
                 }
                 if (QQreaderadhdArr[i])  {
@@ -98,10 +102,10 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                 
                     
                     
-                    $.index = i + 1;
-                console.log(`\n\n开始【QQ阅读】看小视频任务`)
-                    await Signad()
-                    await $.wait(1000)
+                    //
+              
+                    
+                
                 
                 
             }  
@@ -131,7 +135,7 @@ function QQreaderqdck() {
     }
 
 
-if ($request.url.indexOf("activity/new_welfare/receiveVideo") > -1) {
+if ($request.url.indexOf("new_welfare/receiveVideo") > -1) {
         const QQreaderadurl = $request.url
         if (QQreaderadurl) $.setdata(QQreaderadurl, `QQreaderadurl${status}`)
         $.log(QQreaderadurl)
@@ -202,18 +206,18 @@ function Signad(timeout = 0) {
 
                 data = JSON.parse(data)
 
-                if (data.isLogin != true) {
-               $.msg('QQ阅读任务中心小视频','','Cookie已失效!⚠️') 
+                if (data.isLogin !== true)
+                
+                 {
+                $.msg('QQ阅读任务中心','','Cookies失效啦🫧')
 
 
                 } else if (data.code == 0) {
-                $.msg('QQ阅读任务中心小视频','小视频观看成功啦💥',`获得${data.data}赠币`)
-
+                 $.msg('QQ阅读任务中心小视频','小视频观看成功啦💥',`获得${data.data}赠币`)
+               
                  
-                } else if (data.code == -4)
-                
-                 {
-                $.msg('QQ阅读任务中心','','小视频看完啦！！！🌝明天再来吧！！！')
+                } else if  (data.code == -1) {
+                 $.msg('QQ阅读任务中心',`${data.msg}`,'小视频看完啦！！！🌝明天再来吧！！！')
                 
                 }
                 

@@ -15,6 +15,11 @@ let QQreaderqdhd = $.getdata('QQreaderqdhd')
 let QQreaderadurl = $.getdata('QQreaderadurl')
 let QQreaderadhd = $.getdata('QQreaderadhd')
 
+const notify = $.isNode() ? require('./sendNotify') : '';
+
+// 为通知准备的空数组
+$.notifyMsg = [];
+
 
 
 !(async () => {
@@ -87,14 +92,22 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                     $.index = i + 1;
                 console.log(`\n\n开始【QQ阅读】看小视频任务`)
                     //循环运行
-                for (let c = 0; c < 3; c++) {
+                for (let c = 0; c < 2; c++) {
                     $.index = c + 1
 
 
                     
             await Signad()
-                    await $.wait(1000)
+                    await
+                    $.wait(5000)
+                    
                     }
+                    await Signadd()
+                    await $.wait(1000)  
+                    $.index = i + 1;
+                console.log(`\n\n开始【QQ阅读】抽奖任务`)
+                await Signlky()//你要执行的版块  
+                    await $.wait(1000)//你要延迟的时间  1000=1秒
              
                 }
                 if (QQreaderadhdArr[i])  {
@@ -158,7 +171,7 @@ function Sign(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            
+            console.log(data)
 
                 if (data.isLogin != true) {
                $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
@@ -203,7 +216,7 @@ function Signad(timeout = 0) {
             
  
                 data = JSON.parse(data)
-                
+                console.log(data)
 
                 if (data.isLogin !== true)
                 
@@ -230,6 +243,89 @@ function Signad(timeout = 0) {
         }, timeout)
     })
 }
+
+
+
+//等级内看小视频
+function Signadd(timeout = 0) {
+    return new Promise((resolve) => {
+
+        let url = {
+            url: `https://commontgw.reader.qq.com/v7_6_6/giveadreward?adPositionId=18`,
+            headers: JSON.parse(QQreaderqdhd),
+        }
+
+        $.get(url, async (err, resp, data) => {
+            try {
+            data = JSON.parse(data)
+            console.log(data)
+            
+
+                if (data.isLogin != true) {
+               $.msg('QQ阅读看视频','','Cookie已失效!⚠️') 
+
+
+                } else if (data.code == 0) {
+                $.msg('QQ阅读看视频','视频获取成功！！！✅',`${data.revardMsg}`)
+
+                 
+                } else if (data.code == -5)
+                
+                 {
+                $.msg('QQ阅读看视频','','今天已经看完啦！！！🌝明天再来吧！！！')
+                
+                }
+                
+            } catch (e) {
+
+            } finally {
+
+                resolve()
+            }
+        }, timeout)
+    })
+}
+
+//抽奖
+function Signlky(timeout = 0) {
+    return new Promise((resolve) => {
+
+        let url = {
+            url: `https://eventv3.reader.qq.com/activity/new_welfare/getAward?`,
+            headers: JSON.parse(QQreaderqdhd),
+        }
+
+        $.get(url, async (err, resp, data) => {
+            try {
+            data = JSON.parse(data)
+            console.log(data)
+            
+
+                if (data.code == -1) {
+               $.msg('QQ阅读签到抽奖',`${data.msg}`,'Cookie已失效!⚠️') 
+
+
+                } else if (data.code == 0) {
+                $.msg('QQ阅读签到抽奖','抽奖成功！！！✅',`获得${data.data.name}`)
+
+                 
+                } else if (data.code == -3)
+                
+                 {
+                $.msg('QQ阅读签到抽奖',`${data.msg}`,'🌝下次再来吧！！！')
+                
+                }
+                
+            } catch (e) {
+
+            } finally {
+
+                resolve()
+            }
+        }, timeout)
+    })
+}
+
 
 
 

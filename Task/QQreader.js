@@ -5,7 +5,8 @@ status = (status = ($.getval("QQreaderstatus") || "1")) > 1 ? `${status}` : "";
 
 const QQreaderqdurlArr = [], QQreaderqdhdArr = [], QQreaderqdcount = ''
 
-const QQreaderadurlArr = [], QQreaderadhdArr = [], QQreaderadcount = ''
+const QQreaderadurlArr = [], QQreaderadhdArr = [], 
+QQreaderadcount = ''
 
 let QQreaderqdurl = $.getdata('QQreaderqdurl')
 let QQreaderqdhd = $.getdata('QQreaderqdhd')
@@ -13,8 +14,6 @@ let QQreaderqdhd = $.getdata('QQreaderqdhd')
 
 let QQreaderadurl = $.getdata('QQreaderadurl')
 let QQreaderadhd = $.getdata('QQreaderadhd')
-
-
 
 
 
@@ -46,6 +45,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
     } else {
         QQreaderadurlArr.push($.getdata('QQreaderadurl'))
         QQreaderadhdArr.push($.getdata('QQreaderadhd'))
+    
 
 
         let QQreaderadcount = ($.getval('QQreaderadcount') || '1');
@@ -54,6 +54,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
 
             QQreaderadurlArr.push($.getdata(`QQreaderadurl${i}`))
             QQreaderadhdArr.push($.getdata(`QQreaderadhd${i}`))
+            
 
         }
     }
@@ -99,13 +100,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                 if (QQreaderadhdArr[i])  {
                 QQreaderadurl = QQreaderadurlArr[i];
                 QQreaderadhd = QQreaderadhdArr[i];
-                
-                    
-                    
-                    //
-              
-                    
-                
+           
                 
                 
             }  
@@ -120,6 +115,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
 
 
 function QQreaderqdck() {
+    
     if ($request.url.indexOf("activity/new_welfare/sign") > -1) {
         const QQreaderqdurl = $request.url
         if (QQreaderqdurl) $.setdata(QQreaderqdurl, `QQreaderqdurl${status}`)
@@ -135,11 +131,11 @@ function QQreaderqdck() {
     }
 
 
-if ($request.url.indexOf("new_welfare/receiveVideo") > -1) {
+    if ($request.url.indexOf("activity/new_welfare/receiveVideo") > -1) {
         const QQreaderadurl = $request.url
         if (QQreaderadurl) $.setdata(QQreaderadurl, `QQreaderadurl${status}`)
         $.log(QQreaderadurl)
-
+        
         const QQreaderadhd = JSON.stringify($request.headers)
         if (QQreaderadhd) $.setdata(QQreaderadhd, `QQreaderadhd${status}`)
         $.log(QQreaderadhd)
@@ -162,6 +158,7 @@ function Sign(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
+            
 
                 if (data.isLogin != true) {
                $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
@@ -174,7 +171,7 @@ function Sign(timeout = 0) {
                 } else if (data.code == -4)
                 
                  {
-                $.msg('QQ阅读签到','','签到重复啦！！！🌝明天再来吧！！！')
+                $.msg('QQ阅读签到','','已经签到过啦！！！🌝明天再来吧！！！')
                 
                 }
                 
@@ -190,21 +187,23 @@ function Sign(timeout = 0) {
 
 
 
-
-
 //任务中心/更多/看小视频领赠币
 function Signad(timeout = 0) {
-    return new Promise((resolve) => {
+    return new Promise((resolve) => 
+{
 
         let url = {
-            url: `https://eventv3.reader.qq.com/activity/new_welfare/receiveVideo?`,
+            url: `https://eventv3.reader.qq.com/activity/new_welfare/receiveVideo?type=70526242`,
+ 
             headers: JSON.parse(QQreaderadhd),
         }
 
         $.get(url, async (err, resp, data) => {
             try {
-
+            
+ 
                 data = JSON.parse(data)
+                
 
                 if (data.isLogin !== true)
                 
@@ -213,11 +212,12 @@ function Signad(timeout = 0) {
 
 
                 } else if (data.code == 0) {
-                 $.msg('QQ阅读任务中心小视频','小视频观看成功啦💥',`获得${data.data}赠币`)
+                 $.msg('QQ阅读任务中心小视频','小视频观看成功啦💥', `获得${data.data}赠币`)
                
                  
                 } else if  (data.code == -1) {
-                 $.msg('QQ阅读任务中心',`${data.msg}`,'小视频看完啦！！！🌝明天再来吧！！！')
+                 $.msg(`QQ阅读任务中心`,`今天${data.msg}完`,'小视频奖励啦！！！🌝明天再来吧！！！')
+                 
                 
                 }
                 

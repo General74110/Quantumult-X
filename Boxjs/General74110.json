@@ -18,7 +18,7 @@
     {
       "id": "QQreader",
       "name": "QQ阅读",
-      "keys": ["Cookie"],
+      "keys": ["QQreaderqdhd"],
       "author": "@General℡",
       "repo": "https://raw.githubusercontent.com/General74110/Quantumult-X/tree/master/Task",
       "icons": ["https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/QQ.png", 

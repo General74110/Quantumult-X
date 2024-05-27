@@ -88,6 +88,18 @@ $.notifyMsg = [];
 
                     await Sign()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
+
+                         $.index = i + 1;
+                console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
+                    await Signadd()
+                    await $.wait(1000)  
+                    
+                    $.index = i + 1;
+                console.log(`\n\n开始【QQ阅读】抽奖任务`)
+                await Signlky()//你要执行的版块  
+                    await $.wait(1000)//你要延迟的时间  1000=1秒
+             
+                }
                     
                     $.index = i + 1;
                 console.log(`\n\n开始【QQ阅读】看小视频任务`)
@@ -102,14 +114,7 @@ $.notifyMsg = [];
                     $.wait(5000)
                     
                     }
-                    await Signadd()
-                    await $.wait(1000)  
-                    $.index = i + 1;
-                console.log(`\n\n开始【QQ阅读】抽奖任务`)
-                await Signlky()//你要执行的版块  
-                    await $.wait(1000)//你要延迟的时间  1000=1秒
-             
-                }
+                    
                 if (QQreaderadhdArr[i])  {
                 QQreaderadurl = QQreaderadurlArr[i];
                 QQreaderadhd = QQreaderadhdArr[i];

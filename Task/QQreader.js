@@ -15,10 +15,6 @@ let QQreaderqdhd = $.getdata('QQreaderqdhd')
 let QQreaderadurl = $.getdata('QQreaderadurl')
 let QQreaderadhd = $.getdata('QQreaderadhd')
 
-const notify = $.isNode() ? require('./sendNotify') : '';
-
-// 为通知准备的空数组
-$.notifyMsg = [];
 
 
 

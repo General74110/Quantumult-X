@@ -69,7 +69,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                 8 * 60 * 60 * 1000
             ).toLocaleString()} ===============================================\n`);
 
-        for (let i = 0; i < (QQreaderqdurlArr.length|QQreaderadurlArr.length); i++) {
+       for (let i = 0; i < (QQreaderqdurlArr.length|QQreaderadurlArr.length); i++) {
 
             if (QQreaderqdhdArr[i])  {
 
@@ -77,7 +77,9 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                 QQreaderqdhd = QQreaderqdhdArr[i];
 
 
-                $.index = i + 1;
+
+
+               
                 console.log(`\n\n开始【QQ阅读】签到任务`)
 
                 
@@ -85,32 +87,49 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                     await Sign()//你要执行的版块  
                     await $.wait(1000)//你要延迟的时间  1000=1秒
 
-                         $.index = i + 1;
+                         
                 console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
                     await Signadd()
                     await $.wait(1000)  
                     
-                    $.index = i + 1;
+                    
                 console.log(`\n\n开始【QQ阅读】抽奖任务`)
                 await Signlky()//你要执行的版块  
-                    await $.wait(1000)//你要延迟的时间  1000=1秒
+                    await $.wait(5000)//你要延迟的时间  1000=1秒
              
-                }
+                
                     
-                    $.index = i + 1;
-                console.log(`\n\n开始【QQ阅读】看小视频任务`)
-                    //循环运行
-                for (let c = 0; c < 2; c++) {
-                    $.index = c + 1
-
+                   
+                console.log(`\n\n开始【QQ阅读】第一次看小视频任务`)
+                   
 
                     
             await Signad()
                     await
-                    $.wait(5000)
+                    $.wait(10000)
                     
-                    }
                     
+                    
+                    console.log(`\n\n开始【QQ阅读】第二次看小视频任务`)
+                   
+
+                    
+            await Signad()
+                    await
+                    $.wait(15000)
+                    
+                    
+                    
+                    console.log(`\n\n开始【QQ阅读】第三次看小视频任务`)
+                   
+
+                    
+            await Signad()
+                    await
+                    $.wait(1000)
+                    
+                    } 
+           
                 if (QQreaderadhdArr[i])  {
                 QQreaderadurl = QQreaderadurlArr[i];
                 QQreaderadhd = QQreaderadhdArr[i];
@@ -122,11 +141,8 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
     }
 })()
 
-    .catch((e) => $.logErr(e))
+       .catch((e) => $.logErr(e))
     .finally(() => $.done())
-
-
-
 
 function QQreaderqdck() {
     
@@ -172,7 +188,7 @@ function Sign(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            console.log(data)
+            //console.log(data)
 
                 if (data.isLogin != true) {
                $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
@@ -217,7 +233,7 @@ function Signad(timeout = 0) {
             
  
                 data = JSON.parse(data)
-                console.log(data)
+                //console.log(data)
 
                 if (data.isLogin !== true)
                 
@@ -259,7 +275,7 @@ function Signadd(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            console.log(data)
+            //console.log(data)
             
 
                 if (data.isLogin != true) {
@@ -299,7 +315,7 @@ function Signlky(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            console.log(data)
+            //console.log(data)
             
 
                 if (data.code == -1) {
@@ -326,6 +342,8 @@ function Signlky(timeout = 0) {
         }, timeout)
     })
 }
+
+
 
 
 

@@ -50,7 +50,7 @@ let Shuqibody = $.getdata('Shuqibody')
 
 
                 //循环运行
-                for (let c = 0; c < 10; c++) {
+                for (let c = 0; c < 1; c++) {
                     $.index = c + 1
 
                     await AdTask()//你要执行的版块
@@ -100,13 +100,18 @@ function AdTask(timeout = 0) {
         }
         $.post(url, async (err, resp, data) => {
             try {
+            $.log(data)
 
                 data = JSON.parse(data)
 
                 if (data.status == 200) {
                     $.log('书旗小说刷听书时长', '刷时长成功🏅️', `${data.data.awardMessage}`)
+                } else if (
+                data.status == 900406
+                ) {
+                    $.log('书旗小说刷听书时长', '刷时长失败☹️', `${data.message}`)
                 } else {
-                    $.log('书旗小说刷听书时长', '刷时长成功🏅️', 'Cookie失效')
+                $.log('书旗小说刷听书时长', '刷时长失败🧐', 'Cookie失效')
                 }
             } catch (e) {} finally {
 

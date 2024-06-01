@@ -104,9 +104,9 @@ function AdTask(timeout = 0) {
                 data = JSON.parse(data)
 
                 if (data.status == 200) {
-                    console.log('书旗小说刷听书时长', '', `${data.data.awardMessage}`)
-                }  else {
-                    console.log('书旗小说刷听书时长', '', 'Cookie失效')
+                    $.log('书旗小说刷听书时长', '刷时长成功🏅️', `${data.data.awardMessage}`)
+                } else {
+                    $.log('书旗小说刷听书时长', '刷时长成功🏅️', 'Cookie失效')
                 }
             } catch (e) {} finally {
 

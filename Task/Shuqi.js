@@ -105,9 +105,7 @@ function AdTask(timeout = 0) {
 
                 if (data.status == 200) {
                     console.log('书旗小说刷听书时长', '', `${data.data.awardMessage}`)
-                } else if(data.status == 900406) {
-                    console.log('书旗小说刷听书时长', '', `${data.message}`)
-                } else {
+                }  else {
                     console.log('书旗小说刷听书时长', '', 'Cookie失效')
                 }
             } catch (e) {} finally {

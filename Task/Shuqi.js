@@ -46,11 +46,11 @@ let Shuqibody = $.getdata('Shuqibody')
                 Shuqibody = ShuqibodyArr[i];
 
                 $.index = i + 1;
-                console.log(`\n\n开始【书旗小说刷听书时长${$.index}】`)
+                console.log(`\n\n开始【书旗小说刷听书时长`)
 
 
                 //循环运行
-                for (let c = 0; c < 1; c++) {
+                for (let c = 0; c < 10; c++) {
                     $.index = c + 1
 
                     await AdTask()//你要执行的版块
@@ -105,13 +105,13 @@ function AdTask(timeout = 0) {
                 data = JSON.parse(data)
 
                 if (data.status == 200) {
-                    $.log('书旗小说刷听书时长', '刷时长成功🏅️', `${data.data.awardMessage}`)
+                    $.log('书旗小说刷听书时长','刷时长成功🏅️',`${data.data.awardMessage}`)
                 } else if (
                 data.status == 900406
                 ) {
-                    $.log('书旗小说刷听书时长', '刷时长失败☹️', `${data.message}`)
+                    $.log('书旗小说刷听书时长','刷时长失败☹️',`${data.message}`)
                 } else {
-                $.log('书旗小说刷听书时长', '刷时长失败🧐', 'Cookie失效')
+                $.log('书旗小说刷听书时长','刷时长失败🧐','Cookie失效')
                 }
             } catch (e) {} finally {
 

@@ -50,7 +50,7 @@ let Shuqibody = $.getdata('Shuqibody')
 
 
                 //循环运行
-                for (let c = 0; c < 40; c++) {
+                for (let c = 0; c < 10; c++) {
                     $.index = c + 1
 
                     await AdTask()//你要执行的版块

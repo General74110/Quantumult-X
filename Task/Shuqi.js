@@ -50,11 +50,11 @@ let Shuqibody = $.getdata('Shuqibody')
 
 
                 //循环运行
-                for (let c = 0; c < 10; c++) {
+                for (let c = 0; c < 6; c++) {
                     $.index = c + 1
 
                     await AdTask()//你要执行的版块
-                    await $.wait(60000)//你要延迟的时间  1000=1秒
+                    await $.wait(4000)//你要延迟的时间  1000=1秒
 
                 }
             }

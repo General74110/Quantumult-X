@@ -80,12 +80,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
 
 
                
-                console.log(`\n\n开始【QQ阅读】签到任务`)
-
                 
-
-                    await Sign()//你要执行的版块  
-                    await $.wait(1000)//你要延迟的时间  1000=1秒
 
                          
                 console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
@@ -127,6 +122,14 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
             await Signad()
                     await
                     $.wait(1000)
+                    
+                    
+                    console.log(`\n\n开始【QQ阅读】签到任务`)
+
+                
+
+                    await Sign()//你要执行的版块  
+                    await $.wait(1000)//你要延迟的时间  1000=1秒
                     
                     } 
            

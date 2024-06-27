@@ -113,7 +113,7 @@ qqrdcookieArr.push($.getdata(`qqrdcookie${i}`))
 
 //获取ck
 function qqrdck() {
-    if ($request.url.indexOf("getAdVideoReward") > -1) {
+    if ($request.url.indexOf("activity/new_welfare/queryAwardList") > -1) {
         const qqrdurl = $request.url
         if (qqrdurl) $.setdata(qqrdurl, `qqrdurl${status}`)
         $.log(qqrdurl)

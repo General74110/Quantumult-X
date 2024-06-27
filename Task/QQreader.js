@@ -1,19 +1,13 @@
 const $ = new Env('QQ阅读');
 let status;
 
-status = (status = ($.getval("QQreaderstatus") || "1")) > 1 ? `${status}` : "";
+status = (status = ($.getval("qqrdstatus") || "1")) > 1 ? `${status}` : "";
 
-const QQreaderqdurlArr = [], QQreaderqdhdArr = [], QQreaderqdcount = ''
+const qqrdurlArr = [], qqrdhdArr = [], qqrdcookieArr = [], qqrdcount = ''
 
-const QQreaderadurlArr = [], QQreaderadhdArr = [], 
-QQreaderadcount = ''
-
-let QQreaderqdurl = $.getdata('QQreaderqdurl')
-let QQreaderqdhd = $.getdata('QQreaderqdhd')
-
-
-let QQreaderadurl = $.getdata('QQreaderadurl')
-let QQreaderadhd = $.getdata('QQreaderadhd')
+let qqrdurl = $.getdata('qqrdurl')
+let qqrdhd = $.getdata('qqrdhd')
+let qqrdcookie = $.getdata('qqrdcookie')
 
 
 
@@ -21,46 +15,26 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
 !(async () => {
     if (typeof $request !== "undefined") {
 
-        QQreaderqdck()
-        
+        qqrdck()
 
     } else {
-        QQreaderqdurlArr.push($.getdata('QQreaderqdurl'))
-        QQreaderqdhdArr.push($.getdata('QQreaderqdhd'))
+        qqrdurlArr.push($.getdata('qqrdurl'))
+        qqrdhdArr.push($.getdata('qqrdhd'))
+
+qqrdcookieArr.push($.getdata('qqrdcookie')) 
 
 
-        let QQreaderqdcount = ($.getval('QQreaderqdcount') || '1');
+        let qqrdcount = ($.getval('qqrdcount') || '1');
 
-        for (let i = 2; i <= QQreaderqdcount; i++) {
+        for (let i = 2; i <= qqrdcount; i++) {
 
-            QQreaderqdurlArr.push($.getdata(`QQreaderqdurl${i}`))
-            QQreaderqdhdArr.push($.getdata(`QQreaderqdhd${i}`))
-            }
+            qqrdurlArr.push($.getdata(`qqrdurl${i}`))
+            qqrdhdArr.push($.getdata(`qqrdhd${i}`))
             
-            
-            if (typeof $request !== "undefined") {
+qqrdcookieArr.push($.getdata(`qqrdcookie${i}`))
 
-        QQreaderadck()
-        
-
-    } else {
-        QQreaderadurlArr.push($.getdata('QQreaderadurl'))
-        QQreaderadhdArr.push($.getdata('QQreaderadhd'))
-    
-
-
-        let QQreaderadcount = ($.getval('QQreaderadcount') || '1');
-
-        for (let i = 2; i <= QQreaderadcount; i++) {
-
-            QQreaderadurlArr.push($.getdata(`QQreaderadurl${i}`))
-            QQreaderadhdArr.push($.getdata(`QQreaderadhd${i}`))
-            
 
         }
-    }
-
-
 
         console.log(
             `\n\n=============================================== 脚本执行 - 北京时间(UTC+8)：${new Date(
@@ -69,21 +43,16 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                 8 * 60 * 60 * 1000
             ).toLocaleString()} ===============================================\n`);
 
-       for (let i = 0; i < (QQreaderqdurlArr.length|QQreaderadurlArr.length); i++) {
+        for (let i = 0; i < qqrdhdArr.length; i++) {
 
-            if (QQreaderqdhdArr[i])  {
+            if (qqrdhdArr[i]) {
 
-                QQreaderqdurl = QQreaderqdurlArr[i];
-                QQreaderqdhd = QQreaderqdhdArr[i];
+                qqrdurl = qqrdurlArr[i];
+                qqrdhd = qqrdhdArr[i];
+                qqrdcookie = qqrdcookieArr[i];
 
 
-
-
-               
-                
-
-                         
-                console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
+            console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
                     await Signadd()
                     await $.wait(1000)  
                     
@@ -133,13 +102,7 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
                     
                     } 
            
-                if (QQreaderadhdArr[i])  {
-                QQreaderadurl = QQreaderadurlArr[i];
-                QQreaderadhd = QQreaderadhdArr[i];
-           
                 
-                
-            }  
         }
     }
 })()
@@ -147,51 +110,46 @@ let QQreaderadhd = $.getdata('QQreaderadhd')
        .catch((e) => $.logErr(e))
     .finally(() => $.done())
 
-function QQreaderqdck() {
-    
-    if ($request.url.indexOf("activity/new_welfare/sign") > -1) {
-        const QQreaderqdurl = $request.url
-        if (QQreaderqdurl) $.setdata(QQreaderqdurl, `QQreaderqdurl${status}`)
-        $.log(QQreaderqdurl)
 
-        const QQreaderqdhd = JSON.stringify($request.headers)
-        if (QQreaderqdhd) $.setdata(QQreaderqdhd, `QQreaderqdhd${status}`)
-        $.log(QQreaderqdhd)
+//获取ck
+function qqrdck() {
+    if ($request.url.indexOf("getAdVideoReward") > -1) {
+        const qqrdurl = $request.url
+        if (qqrdurl) $.setdata(qqrdurl, `qqrdurl${status}`)
+        $.log(qqrdurl)
 
-        $.msg($.name, "", `QQ阅读签到${status}获取Cookie成功`)
-
-    
-    }
-
-
-    if ($request.url.indexOf("activity/new_welfare/receiveVideo") > -1) {
-        const QQreaderadurl = $request.url
-        if (QQreaderadurl) $.setdata(QQreaderadurl, `QQreaderadurl${status}`)
-        $.log(QQreaderadurl)
+        const qqrdhd = JSON.stringify($request.headers)
+        if (qqrdhd) $.setdata(qqrdhd, `qqrdhd${status}`)
+        $.log(qqrdhd)
         
-        const QQreaderadhd = JSON.stringify($request.headers)
-        if (QQreaderadhd) $.setdata(QQreaderadhd, `QQreaderadhd${status}`)
-        $.log(QQreaderadhd)
+        const qqrdcookie = $request.headers['Cookie']
+    if (qqrdcookie) $.setdata(qqrdcookie, `qqrdcookie${status}`)
+    $.log(qqrdcookie)
 
-        $.msg($.name, "", `QQ阅读活动中心看视频${status}获取Cookie成功`)
+        $.msg($.name, "", `QQ阅读${status}获取Cookie成功`)
 
     }
 }
 
 
+
+
 //签到
 function Sign(timeout = 0) {
     return new Promise((resolve) => {
+    let cookie = qqrdcookie
 
         let url = {
             url: `https://eventv3.reader.qq.com/activity/new_welfare/sign`,
-            headers: JSON.parse(QQreaderqdhd),
+            headers: {
+            'Cookie': `${cookie}`,
+            },
         }
 
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            //console.log(data)
+            console.log(data)
 
                 if (data.isLogin != true) {
                $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
@@ -224,11 +182,14 @@ function Sign(timeout = 0) {
 function Signad(timeout = 0) {
     return new Promise((resolve) => 
 {
+let cookie = qqrdcookie
 
         let url = {
             url: `https://eventv3.reader.qq.com/activity/new_welfare/receiveVideo?type=70526242`,
  
-            headers: JSON.parse(QQreaderadhd),
+            headers: {
+            'Cookie': `${cookie}`,
+            },
         }
 
         $.get(url, async (err, resp, data) => {
@@ -236,7 +197,7 @@ function Signad(timeout = 0) {
             
  
                 data = JSON.parse(data)
-                //console.log(data)
+                console.log(data)
 
                 if (data.isLogin !== true)
                 
@@ -269,16 +230,19 @@ function Signad(timeout = 0) {
 //等级内看小视频
 function Signadd(timeout = 0) {
     return new Promise((resolve) => {
+    let cookie = qqrdcookie
 
         let url = {
             url: `https://commontgw.reader.qq.com/v7_6_6/giveadreward?adPositionId=18`,
-            headers: JSON.parse(QQreaderqdhd),
+            headers: {
+            'Cookie': `${cookie}`,
+            },
         }
 
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            //console.log(data)
+            console.log(data)
             
 
                 if (data.isLogin != true) {
@@ -309,16 +273,19 @@ function Signadd(timeout = 0) {
 //抽奖
 function Signlky(timeout = 0) {
     return new Promise((resolve) => {
+    let cookie = qqrdcookie
 
         let url = {
             url: `https://eventv3.reader.qq.com/activity/new_welfare/getAward?`,
-            headers: JSON.parse(QQreaderqdhd),
+            headers: {
+            'Cookie':` ${cookie}`,
+            },
         }
 
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            //console.log(data)
+            console.log(data)
             
 
                 if (data.code == -1) {
@@ -345,9 +312,6 @@ function Signlky(timeout = 0) {
         }, timeout)
     })
 }
-
-
-
 
 
 

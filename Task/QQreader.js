@@ -9,6 +9,9 @@ let qqrdurl = $.getdata('qqrdurl')
 let qqrdhd = $.getdata('qqrdhd')
 let qqrdcookie = $.getdata('qqrdcookie')
 
+let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
+const logs =0;//0为关闭日志，1为开启
+var message = ''
 
 
 
@@ -51,34 +54,27 @@ qqrdcookieArr.push($.getdata(`qqrdcookie${i}`))
                 qqrdhd = qqrdhdArr[i];
                 qqrdcookie = qqrdcookieArr[i];
                 
-            console.log(`\n\n开始【QQ阅读】签到任务`)
+            console.log(`\n\n开始【QQ阅读】任务`)
 
-                await Sign()//你要执行的版块  
-                    await $.wait(2000)//你要延迟的时间  1000=1秒
+                await Sign()
+                    await $.wait(2000)
 
-            console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
+            
                     await Signadd()
                     await $.wait(3000)  
                     
                     
-                console.log(`\n\n开始【QQ阅读】抽奖任务`)
-                await Signlky()//你要执行的版块  
-                    await $.wait(5000)//你要延迟的时间  1000=1秒
+                
+                await Signlky()
+                    await $.wait(5000)
              
                 
                     
                    
-                console.log(`\n\n开始【QQ阅读】第一次看小视频任务`)
-                   
-
-                    
-            await Signad()
-                    await
-                    $.wait(10000)
-                    
-                    
-                    
-                    console.log(`\n\n开始【QQ阅读】第二次看小视频任务`)
+                //循环运行
+                for (let c = 0; c < 3; c++) {
+                    $.index = c + 1
+                    $.log(`正在执行第${$.index}次任务`)
                    
 
                     
@@ -88,16 +84,13 @@ qqrdcookieArr.push($.getdata(`qqrdcookie${i}`))
                     
                     
                     
-                    console.log(`\n\n开始【QQ阅读】第三次看小视频任务`)
-                   
-
+                    }
                     
-            await Signad()
-                    await
-                    $.wait(10000)
+                    
            
           }      
         }
+        await showmsg()
     }
 })()
 
@@ -146,17 +139,14 @@ function Sign(timeout = 0) {
             //console.log(data)
 
                 if (data.isLogin != true) {
-               $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
-
-
-                } else if (data.code == 0) {
-                $.msg('QQ阅读签到','','签到成功啦！！！✅')
-
-                 
-                } else if (data.code == -4)
-                
-                 {
-                $.msg('QQ阅读签到','','已经签到过啦！！！🌝明天再来吧！！！')
+               console.log('QQ阅读签到' + 'Cookie已失效!⚠️\n');
+    message += 'QQ阅读签到' + 'Cookie已失效!⚠️\n';
+} else if (data.code == 0) {
+    console.log('QQ阅读签到' + '签到成功啦！！！✅\n');
+    message += 'QQ阅读签到' + '签到成功啦！！！✅\n';
+} else if (data.code == -4) {
+    console.log('QQ阅读签到' + '已经签到过啦！！！🌝明天再来吧！！！');
+    message += 'QQ阅读签到' + '已经签到过啦！！！🌝明天再来吧！！！'
                 
                 }
                 
@@ -196,16 +186,14 @@ let cookie = qqrdcookie
                 if (data.isLogin !== true)
                 
                  {
-                $.msg('QQ阅读任务中心','','Cookies失效啦🫧')
-
-
-                } else if (data.code == 0) {
-                 $.msg('QQ阅读任务中心小视频','小视频观看成功啦💥', `获得${data.data}赠币`)
-               
-                 
-                } else if  (data.code == -1) {
-                 $.msg(`QQ阅读任务中心`,`今天${data.msg}完`,'小视频奖励啦！！！🌝明天再来吧！！！')
-                 
+                console.log('QQ阅读任务中心' + 'Cookies失效啦🫧\n');
+    message += 'QQ阅读任务中心' + 'Cookies失效啦🫧\n';
+} else if (data.code == 0) {
+    console.log('QQ阅读任务中心小视频' + '小视频观看成功啦💥\n' + '获得' + data.data + '赠币\n');
+    message += 'QQ阅读任务中心小视频' + '小视频观看成功啦💥\n' + '获得' + data.data + '赠币\n';
+} else if (data.code == -1) {
+    console.log('QQ阅读任务中心' + '今天' + data.msg + '完\n' + '小视频奖励啦！！！🌝明天再来吧！！！');
+    message += 'QQ阅读任务中心' + '今天' + data.msg + '完\n' + '小视频奖励啦！！！🌝明天再来吧！！！'
                 
                 }
                 
@@ -240,17 +228,14 @@ function Signadd(timeout = 0) {
             
 
                 if (data.isLogin != true) {
-               $.msg('QQ阅读看视频','','Cookie已失效!⚠️') 
-
-
-                } else if (data.code == 0) {
-                $.msg('QQ阅读看视频','视频获取成功！！！✅',`${data.revardMsg}`)
-
-                 
-                } else if (data.code == -5)
-                
-                 {
-                $.msg('QQ阅读看视频','','今天已经看完啦！！！🌝明天再来吧！！！')
+               console.log('QQ阅读看视频' + 'Cookie已失效!⚠️\n');
+    message += 'QQ阅读看视频' + 'Cookie已失效!⚠️\n';
+} else if (data.code == 0) {
+    console.log('QQ阅读看视频' + '视频获取成功！！！✅\n' + data.revardMsg);
+    message += 'QQ阅读看视频' + '视频获取成功！！！✅\n' + data.revardMsg;
+} else if (data.code == -5) {
+    console.log('QQ阅读看视频' + '今天已经看完啦！！！🌝明天再来吧！！！\n');
+    message += 'QQ阅读看视频' + '今天已经看完啦！！！🌝明天再来吧！！！' + '\n'
                 
                 }
                 
@@ -283,17 +268,14 @@ function Signlky(timeout = 0) {
             
 
                 if (data.code == -1) {
-               $.msg('QQ阅读签到抽奖',`${data.msg}`,'Cookie已失效!⚠️') 
-
-
-                } else if (data.code == 0) {
-                $.msg('QQ阅读签到抽奖','抽奖成功！！！✅',`获得${data.data.name}`)
-
-                 
-                } else if (data.code == -3)
-                
-                 {
-                $.msg('QQ阅读签到抽奖',`${data.msg}`,'🌝下次再来吧！！！')
+    console.log('QQ阅读签到抽奖' + data.err_msg + 'Cookie已失效!⚠️');
+    message += 'QQ阅读签到抽奖' + data.err_msg + 'Cookie已失效!⚠️';
+} else if (data.code == 0) {
+    console.log('QQ阅读签到抽奖' + '抽奖成功！！！✅' + '获得' + data.data.name + 'n');
+    message += 'QQ阅读签到抽奖' + '抽奖成功！！！✅' + '获得' + data.data.name + 'n';
+} else if (data.code == -3) {
+    console.log('QQ阅读签到抽奖' + data.msg + '🌝下次再来吧！！！');
+    message += 'QQ阅读签到抽奖' + data.msg + '🌝下次再来吧！！！'
                 
                 }
                 
@@ -307,7 +289,17 @@ function Signlky(timeout = 0) {
     })
 }
 
-
+async function showmsg(){
+  if(tz == 1){
+   if ($.isNode()){
+       await notify.sendNotify($.name,message)
+   }else{
+       $.msg($.name,'',message)
+   }
+  }else{
+       console.log(message)
+   }
+ }
 
 // https://github.com/chavyleung/scripts/blob/master/Env.min.js
 /*********************************** API *************************************/

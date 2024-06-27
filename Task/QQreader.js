@@ -50,11 +50,15 @@ qqrdcookieArr.push($.getdata(`qqrdcookie${i}`))
                 qqrdurl = qqrdurlArr[i];
                 qqrdhd = qqrdhdArr[i];
                 qqrdcookie = qqrdcookieArr[i];
+                
+            console.log(`\n\n开始【QQ阅读】签到任务`)
 
+                await Sign()//你要执行的版块  
+                    await $.wait(2000)//你要延迟的时间  1000=1秒
 
             console.log(`\n\n开始【QQ阅读】等级中看视频任务`)
                     await Signadd()
-                    await $.wait(1000)  
+                    await $.wait(3000)  
                     
                     
                 console.log(`\n\n开始【QQ阅读】抽奖任务`)
@@ -90,19 +94,9 @@ qqrdcookieArr.push($.getdata(`qqrdcookie${i}`))
                     
             await Signad()
                     await
-                    $.wait(1000)
-                    
-                    
-                    console.log(`\n\n开始【QQ阅读】签到任务`)
-
-                
-
-                    await Sign()//你要执行的版块  
-                    await $.wait(1000)//你要延迟的时间  1000=1秒
-                    
-                    } 
+                    $.wait(10000)
            
-                
+          }      
         }
     }
 })()
@@ -149,7 +143,7 @@ function Sign(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            console.log(data)
+            //console.log(data)
 
                 if (data.isLogin != true) {
                $.msg('QQ阅读签到','','Cookie已失效!⚠️') 
@@ -197,7 +191,7 @@ let cookie = qqrdcookie
             
  
                 data = JSON.parse(data)
-                console.log(data)
+                //console.log(data)
 
                 if (data.isLogin !== true)
                 
@@ -242,7 +236,7 @@ function Signadd(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            console.log(data)
+            //console.log(data)
             
 
                 if (data.isLogin != true) {
@@ -285,7 +279,7 @@ function Signlky(timeout = 0) {
         $.get(url, async (err, resp, data) => {
             try {
             data = JSON.parse(data)
-            console.log(data)
+            //console.log(data)
             
 
                 if (data.code == -1) {

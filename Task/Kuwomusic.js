@@ -159,19 +159,21 @@ function Task(timeout = 0) {
  let date = new Date(Number(endTime))
  let dateString = date.toLocaleString();
 		    
-  console.log('酷我音乐看广告' + data.msg + '!💥\n' +
-        '获得免费时长: ' + data.data.singleTime + '分钟\n' +
-        '到期时长: ' + dateString
-    );
-    message += '酷我音乐看广告' + data.msg + '!💥\n' +
-        '获得免费时长: ' + data.data.singleTime + '分钟\n' +
-        '到期时长: ' + dateString + '\n';
+  console.log('酷我音乐看广告 : ' + data.msg + '!💥\n' +
+        '获得免费时长 : ' + data.data.singleTime + '分钟\n' +
+        '到期时长 : ' + dateString
+    );   
+    message += '酷我音乐看广告 : ' + data.msg + '!💥\n' +
+        '获得免费时长 : ' + data.data.singleTime + '分钟\n' +
+        '到期时长 : ' + dateString + '\n';
+        
 } else if (data.code === -1) {
-    console.log('酷我音乐看广告' + data.msg + '！等明天吧！☀️');
-    message += '酷我音乐看广告' + data.msg + '！等明天吧！☀️\n';
+    console.log('酷我音乐看广告 : ' + data.msg + '！等明天吧！☀️');
+    message += '酷我音乐看广告 : ' + data.msg + '！等明天吧！☀️\n';
+    
 } else {
-    console.log('酷我音乐看广告' + data.msg + '八成Cookie掉了🌝');
-    message += '酷我音乐看广告' + data.msg + '八成Cookie掉了🌝\n';
+    console.log('酷我音乐看广告 : ' + data.msg + '八成Cookie掉了🌝');
+    message += '酷我音乐看广告 : ' + data.msg + '八成Cookie掉了🌝\n';
 }
 
 

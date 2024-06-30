@@ -149,7 +149,7 @@ function Sign(timeout = 0) {
     message += 'QQ阅读签到 : ' + '签到成功啦！！！✅\n';
 
 } else if (data.code == -4) {
-    console.log('QQ阅读签到 :' + '已经签到过啦！！！🌝明天再来吧！！！');
+    console.log('QQ阅读签到 : ' + '已经签到过啦！！！🌝明天再来吧！！！');
 
     message += 'QQ阅读签到 : ' + '已经签到过啦！！！🌝明天再来吧！！！'
 
@@ -196,12 +196,12 @@ let cookie = qqrdcookie
     message += 'QQ阅读任务中心' + 'Cookies失效啦🫧\n';
     
 } else if (data.code == 0) {
-    console.log('QQ阅读任务中心小视频' + '小视频观看成功啦💥\n' + '获得' + data.data + '赠币\n');
-    message += 'QQ阅读任务中心小视频' + '小视频观看成功啦💥\n' + '获得' + data.data + '赠币\n';
+    console.log('QQ阅读任务中心小视频 : ' + '小视频观看成功啦💥\n' + '获得' + data.data + '赠币\n');
+    message += 'QQ阅读任务中心小视频 : ' + '小视频观看成功啦💥\n' + '获得' + data.data + '赠币\n';
     
 } else if (data.code == -1) {
-    console.log('QQ阅读任务中心' + '今天' + data.msg + '完\n' + '小视频奖励啦！！！🌝明天再来吧！！！');
-    message += 'QQ阅读任务中心' + '今天' + data.msg + '完\n' + '小视频奖励啦！！！🌝明天再来吧！！！'
+    console.log('QQ阅读任务中心 : ' + '今天' + data.msg + '完\n' + '小视频奖励啦！！！🌝明天再来吧！！！');
+    message += 'QQ阅读任务中心 : ' + '今天' + data.msg + '完\n' + '小视频奖励啦！！！🌝明天再来吧！！！'
                 
                 }
                 
@@ -287,7 +287,7 @@ function Signlky(timeout = 0) {
     
 } else if (data.code == -3) {
     console.log('QQ阅读签到抽奖 : ' + data.msg + '🌝下次再来吧！！！');
-    message += 'QQ阅读签到抽奖 :' + data.msg + '🌝下次再来吧！！！'
+    message += 'QQ阅读签到抽奖 : ' + data.msg + '🌝下次再来吧！！！'
                 
                 }
                 

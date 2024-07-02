@@ -8,7 +8,7 @@
     {
       "id": "Kuwomusic",
       "name": "酷我音乐",
-      "keys": ["kuwostatus", "kuwocount", "tz", "kuwourl1", "kuwohd1", "kuwobody1", "kuwourl2", "kuwohd2", "kuwobody2"],
+      "keys": ["kuwourl1", "kuwohd1", "kuwobody1", "kuwourl2", "kuwohd2", "kuwobody2"],
       "author": "@General℡",
       "repo": "https://raw.githubusercontent.com/General74110/Quantumult-X/tree/master/Task",
       "icons": ["https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/KKTV.png", 

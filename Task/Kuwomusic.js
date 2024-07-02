@@ -110,10 +110,10 @@ async function runTasks(accountIndex) {
     totalFreeTime = 0; // 重置总免费时长
 
     $.log(`\n\n开始【酷我音乐】看广告视频 `);
-    for (let c = 0; c < 3; c++) {
+    for (let c = 0; c < 100; c++) {
         $.index = c + 1;
         $.log(`正在执行第${$.index}次任务`);
-        if ($.index === 3) {
+        if ($.index === 100) {
             message = `本次运行任务`;
         }
         await Task(kuwourl, kuwohd, kuwobody);

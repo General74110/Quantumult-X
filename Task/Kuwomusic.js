@@ -31,138 +31,126 @@ hostname = wapi.kuwo.cn
 
 */
 const $ = new Env('酷我音乐');
-let status = $.getval("kuwostatus") || "1";
+let status;
+
+status = (status = ($.getval("kuwostatus") || "1")) > 1 ? `${status}` : "";
 
 const kuwourlArr = [], kuwohdArr = [], kuwobodyArr = [];
+let kuwocount = $.getval('kuwocount') || '1';
+
 let tz = $.getval('tz') || '1'; // 0关闭通知，1默认开启
 const logs = 0; // 0为关闭日志，1为开启
-var message = '';
-let totalFreeTime = 0; // 总免费时长（分钟）
+let message = '';
+
+const maxDailyRuns = 100;
+let dailyRuns = parseInt($.getval('dailyRuns')) || 0;
 
 !(async () => {
     if (typeof $request !== "undefined") {
         kuwock();
     } else {
-        await loadAccounts();
-        if (kuwourlArr.length > 0) {
-            $.log(`读取到 ${kuwourlArr.length} 个有效账号数据`);
-            for (let i = 0; i < kuwourlArr.length; i++) {
-                await runTasks(i);
-            }
-        } else {
-            $.log(`未读取到有效账号数据`);
+        for (let i = 1; i <= kuwocount; i++) {
+            kuwourlArr.push($.getdata(`kuwourl${i}`));
+            kuwohdArr.push($.getdata(`kuwohd${i}`));
+            kuwobodyArr.push($.getdata(`kuwobody${i}`));
         }
+
+        $.log(
+            `\n\n=============================================== 脚本执行 - 北京时间(UTC+8)：${new Date(
+                new Date().getTime() +
+                new Date().getTimezoneOffset() * 60 * 1000 +
+                8 * 60 * 60 * 1000
+            ).toLocaleString()} ===============================================\n`
+        );
+
+        $.log(`读取到 ${kuwocount} 个账号数据`);
+
+        let totalFreeTime = 0;
+        let successfulRuns = 0;
+
+        for (let i = 0; i < kuwourlArr.length; i++) {
+            if (kuwourlArr[i] && kuwohdArr[i] && kuwobodyArr[i]) {
+                let remainingRuns = maxDailyRuns - dailyRuns;
+                if (remainingRuns <= 0) {
+                    break;
+                }
+
+                kuwourl = kuwourlArr[i];
+                kuwohd = kuwohdArr[i];
+                kuwobody = kuwobodyArr[i];
+
+                $.log(`\n\n开始【酷我音乐】看广告视频`);
+
+                for (let c = 0; c < remainingRuns; c++) {
+                    $.index = c + 1;
+                    $.log(`正在执行第${$.index}次任务`);
+
+                    let result = await Task();
+                    if (result.code === 200) {
+                        totalFreeTime += result.singleTime;
+                        successfulRuns++;
+                    } else if (result.code === -1) {
+                        $.log('今日广告已看完，没有奖励');
+                        message += '今日广告已看完，没有奖励\n';
+                        await showmsg(totalFreeTime);
+                        return;
+                    } else {
+                        $.log(`酷我音乐看广告 : ${result.msg} 八成Cookie掉了🌝`);
+                        message += `酷我音乐看广告 : ${result.msg} 八成Cookie掉了🌝\n`;
+                    }
+
+                    await $.wait(3000); // 延迟时间 1000=1秒
+                }
+            }
+        }
+
+        await showmsg(totalFreeTime);
     }
 })()
-    .catch((e) => $.logErr(e))
-    .finally(() => $.done());
+.catch((e) => $.logErr(e))
+.finally(() => $.done());
 
-// 获取Cookie
 function kuwock() {
-    if ($request.url.includes("freemium/h5/switches")) {
+    if ($request.url.indexOf("freemium/h5/switches") > -1) {
         const kuwourl = $request.url;
-        const index = status;
-
-        if (kuwourl) $.setdata(kuwourl, `kuwourl${index}`);
-        $.log(`保存的 kuwourl${index}: ${kuwourl}`);
+        if (kuwourl) $.setdata(kuwourl, `kuwourl${status}`);
+        $.log(kuwourl);
 
         const kuwohd = JSON.stringify($request.headers);
-        if (kuwohd) $.setdata(kuwohd, `kuwohd${index}`);
-        $.log(`保存的 kuwohd${index}: ${kuwohd}`);
+        if (kuwohd) $.setdata(kuwohd, `kuwohd${status}`);
+        $.log(kuwohd);
 
         const kuwobody = $request.body;
-        if (kuwobody) $.setdata(kuwobody, `kuwobody${index}`);
-        $.log(`保存的 kuwobody${index}: ${kuwobody}`);
+        if (kuwobody) $.setdata(kuwobody, `kuwobody${status}`);
+        $.log(kuwobody);
 
-        $.msg($.name, "", `酷我音乐广告视频${index}获取Cookies成功`);
+        $.msg($.name, "", `酷我音乐广告视频${status}获取Cookies成功`);
     }
 }
 
-// 加载账号数据
-async function loadAccounts() {
-    let kuwocount = $.getval('kuwocount') || '1';
-
-    for (let i = 1; i <= kuwocount; i++) {
-        const kuwourl = $.getdata(`kuwourl${i}`);
-        const kuwohd = $.getdata(`kuwohd${i}`);
-        const kuwobody = $.getdata(`kuwobody${i}`);
-
-        // 添加调试输出，确保读取到数据
-        $.log(`读取的 kuwourl${i}: ${kuwourl}`);
-        $.log(`读取的 kuwohd${i}: ${kuwohd}`);
-        $.log(`读取的 kuwobody${i}: ${kuwobody}`);
-
-        if (kuwourl && kuwohd && kuwobody) {
-            kuwourlArr.push(kuwourl);
-            kuwohdArr.push(kuwohd);
-            kuwobodyArr.push(kuwobody);
-        } else {
-            $.log(`账号${i}的数据不完整，跳过此账号`);
-        }
-    }
-}
-
-// 运行任务
-async function runTasks(accountIndex) {
-    const kuwourl = kuwourlArr[accountIndex];
-    const kuwohd = kuwohdArr[accountIndex];
-    const kuwobody = kuwobodyArr[accountIndex];
-    totalFreeTime = 0; // 重置总免费时长
-
-    $.log(`\n\n开始【酷我音乐】看广告视频 `);
-    for (let c = 0; c < 100; c++) {
-        $.index = c + 1;
-        $.log(`正在执行第${$.index}次任务`);
-        if ($.index === 100) {
-            message = `本次运行任务`;
-        }
-        await Task(kuwourl, kuwohd, kuwobody);
-        await $.wait(3000);
-    }
-    await showmsg();
-}
-
-// 看广告
-function Task(kuwourl, kuwohd, kuwobody, timeout = 0) {
+function Task(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
             url: kuwourl,
             headers: JSON.parse(kuwohd),
             body: kuwobody,
         };
-        $.post(url, async (err, resp, data) => {
+        $.post(url, (err, resp, data) => {
             try {
                 data = JSON.parse(data);
-                if (data.code == 200) {
-                    let singleTime = data.data.singleTime; // 获得的免费时长（分钟）
-                    totalFreeTime += singleTime; // 累加免费时长
-                    let endTime = new Date(Number(data.data.endTime));
-                    let endTimeStr = endTime.toLocaleString();
-
-                    console.log('酷我音乐看广告 : ' + data.msg + '!💥\n' +
-                        '获得免费时长 : ' + singleTime + '分钟\n' +
-                        '到期时长 : ' + endTimeStr
-                    );
-                } else if (data.code === -1) {
-                    console.log('酷我音乐看广告 : ' + data.msg + '！等明天吧！☀️');
-                } else {
-                    console.log('酷我音乐看广告 : ' + data.msg + '八成Cookie掉了🌝');
-                }
+                resolve(data);
             } catch (e) {
-                $.logErr(e);
-            } finally {
-                resolve();
+                resolve({ code: -999, msg: '解析数据失败' });
             }
         }, timeout);
     });
 }
 
-async function showmsg() {
-    const totalMinutes = $.index * 30; // 每次任务30分钟，乘以运行次数
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
+async function showmsg(totalFreeTime) {
+    const hours = Math.floor(totalFreeTime / 60);
+    const minutes = totalFreeTime % 60;
     const totalTimeStr = hours > 0 ? `${hours}小时${minutes}分钟` : `${minutes}分钟`;
-    const endTime = new Date(Date.now() + totalMinutes * 60000);
+    const endTime = new Date(Date.now() + totalFreeTime * 60000);
     const endTimeStr = endTime.toLocaleString();
 
     message += `获得免费时长 : ${totalTimeStr}\n到期时长 : ${endTimeStr}\n`;
@@ -177,7 +165,6 @@ async function showmsg() {
         console.log(message);
     }
 }
-
 
 // https://github.com/chavyleung/scripts/blob/master/Env.min.js
 /*********************************** API *************************************/
